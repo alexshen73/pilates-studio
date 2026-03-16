@@ -1,0 +1,529 @@
+:root {
+  --bg: #f7f5f1;
+  --surface: #fffdf8;
+  --surface-strong: #efe9df;
+  --text: #1e2b2a;
+  --muted: #5b6b68;
+  --primary: #2f6a66;
+  --primary-strong: #244f4c;
+  --accent: #d98a6a;
+  --ring: rgba(47, 106, 102, 0.25);
+  --border: rgba(30, 43, 42, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.75rem;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% 15%, #e9f1ee 0%, rgba(233, 241, 238, 0) 35%),
+    radial-gradient(circle at 85% 10%, #f3e4d8 0%, rgba(243, 228, 216, 0) 32%),
+    var(--bg);
+  font-family: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.pageShell {
+  position: relative;
+  overflow-x: clip;
+  padding-bottom: 2.5rem;
+}
+
+.bgShape {
+  position: absolute;
+  border-radius: 999px;
+  z-index: -1;
+  filter: blur(28px);
+}
+
+.bgShapeOne {
+  width: 22rem;
+  height: 22rem;
+  top: -9rem;
+  right: -4rem;
+  background: rgba(47, 106, 102, 0.18);
+}
+
+.bgShapeTwo {
+  width: 18rem;
+  height: 18rem;
+  top: 27rem;
+  left: -7rem;
+  background: rgba(217, 138, 106, 0.25);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  background: rgba(247, 245, 241, 0.75);
+}
+
+.brandMark {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.03em;
+}
+
+.navList {
+  display: none;
+  align-items: center;
+  gap: 0.72rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  white-space: nowrap;
+}
+
+.navList a:hover,
+.navList a:focus-visible {
+  color: var(--primary-strong);
+}
+
+.langSwitch {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  background: var(--surface);
+}
+
+.hero {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.badge {
+  width: fit-content;
+  margin: 0;
+  border: 1px solid rgba(47, 106, 102, 0.35);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  color: var(--primary-strong);
+  background: rgba(47, 106, 102, 0.08);
+  font-size: 0.86rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+h1 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(2rem, 6vw, 4.25rem);
+  margin-top: 1rem;
+  max-width: 14ch;
+}
+
+.heroSubtitle {
+  margin-top: 1rem;
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+}
+
+.btnPrimary {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.btnPrimary:hover,
+.btnPrimary:focus-visible {
+  background: var(--primary-strong);
+}
+
+.btnGhost {
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+.statsGrid {
+  margin-top: 1.8rem;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.statCard,
+.block {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 1rem;
+}
+
+.statCard {
+  padding: 0.9rem;
+}
+
+.statCard p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.statCard strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 1.1rem;
+}
+
+.section {
+  margin-top: 1rem;
+}
+
+.block {
+  padding: 1.2rem;
+}
+
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+.block h2 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.block > p {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+}
+
+.pointList {
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.pointList li {
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.7rem;
+  background: var(--surface-strong);
+}
+
+.split {
+  display: grid;
+  gap: 1rem;
+}
+
+.sectionHead {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+
+.visualBlock {
+  border: 1px dashed rgba(47, 106, 102, 0.36);
+  border-radius: 1rem;
+  min-height: 150px;
+  background: linear-gradient(150deg, #f7f4ee, #ebe4d8);
+  color: #6a7d77;
+  display: grid;
+  place-items: center;
+  font-size: 0.86rem;
+  text-align: center;
+  padding: 0.8rem;
+}
+
+.profileCard {
+  border: 1px dashed rgba(47, 106, 102, 0.35);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: linear-gradient(145deg, #fdfbf7, #f0ece4);
+}
+
+.visualTrainer {
+  margin-bottom: 0.85rem;
+  min-height: 220px;
+}
+
+.profileTag {
+  width: fit-content;
+  margin: 0;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(217, 138, 106, 0.15);
+  color: #8a4f36;
+  font-size: 0.82rem;
+}
+
+.profileCard h3 {
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.profileCard p {
+  color: var(--muted);
+}
+
+.cardGrid,
+.programGrid,
+.faqGrid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.infoCard,
+.programCard,
+.faqCard {
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  padding: 1rem;
+  background: #fffcf7;
+}
+
+.infoCard h3,
+.programCard h3,
+.faqCard h3 {
+  font-size: 1.1rem;
+}
+
+.infoCard p,
+.programCard p,
+.faqCard p {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+}
+
+.testimonialCard {
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  padding: 1rem;
+  background: #fffcf7;
+}
+
+.quote {
+  margin: 0;
+  color: var(--text);
+}
+
+.author {
+  margin: 0.8rem 0 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.programLength {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.faqAccordion {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.faqItem {
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: #fffcf7;
+  overflow: hidden;
+}
+
+.faqItem summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.95rem 1rem;
+  font-weight: 700;
+  position: relative;
+  padding-right: 2.4rem;
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItem summary::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.faqItem[open] summary::after {
+  content: "−";
+}
+
+.faqItem p {
+  margin: 0;
+  padding: 0 1rem 1rem;
+  color: var(--muted);
+}
+
+.contacts .linkGrid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.contacts .linkGrid a {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.7rem;
+  background: #fffcf7;
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text);
+}
+
+.iconChip {
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(47, 106, 102, 0.1);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.iconChip svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contacts .linkGrid a:hover,
+.contacts .linkGrid a:focus-visible {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem var(--ring);
+}
+
+.footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.upButton {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--primary-strong);
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  box-shadow: 0 10px 20px rgba(30, 43, 42, 0.12);
+}
+
+.upButton:hover,
+.upButton:focus-visible {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem var(--ring);
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: min(1120px, calc(100% - 3rem));
+  }
+
+  .navList {
+    display: flex;
+  }
+
+  .hero {
+    padding-top: 4rem;
+    padding-bottom: 2.7rem;
+  }
+
+  .block {
+    padding: 1.5rem;
+  }
+
+  .sectionHead {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .split {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: stretch;
+  }
+
+  .cardGrid,
+  .programGrid,
+  .faqGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contacts .linkGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-top: 5rem;
+  }
+
+  .cardGrid,
+  .programGrid,
+  .faqGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
