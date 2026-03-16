@@ -31,6 +31,15 @@ Open `http://localhost:3000` (redirects to `/uk`).
 4. Deploy with default Next.js settings.
 5. Add custom domain in Vercel when ready.
 
+## GitHub Pages Preview
+- A workflow is included at `.github/workflows/pages-preview.yml`.
+- Push your changes to branch `preview` to publish a static preview on GitHub Pages.
+- In repository settings:
+  1. Open `Settings` -> `Pages`.
+  2. Set `Source` to `GitHub Actions`.
+- First deployment URL format:
+  - `https://<github-username>.github.io/<repo-name>/`
+
 ## Language routes
 - Ukrainian: `/uk`
 - English: `/en`
