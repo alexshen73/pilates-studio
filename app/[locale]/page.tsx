@@ -45,7 +45,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
 
       <header className="container header">
         <Link href={`/${locale}`} className="brandMark">
-          Pilates Studio
+          <img src="../brand/logo-calm-a.svg" alt="Pilates Studio" className="brandLogo" />
         </Link>
         <nav className="navList" aria-label="Primary">
           <a href="#about">{data.nav.about}</a>
