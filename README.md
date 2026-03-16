@@ -19,6 +19,8 @@ Open `http://localhost:3000` (redirects to `/uk`).
 - In `app/layout.tsx`, set `metadataBase` to your production domain.
 - In `app/sitemap.ts` and `app/robots.ts`, replace `https://example.com`.
 - In `app/[locale]/page.tsx`, set real links:
+  - Instagram
+  - Tik-Tok
   - YouTube
   - Telegram
   - Email
