@@ -62,17 +62,25 @@ export default async function LocalePage({ params }: LocalePageProps) {
 
       <main>
         <section className="container hero">
-          <p className="badge">{data.hero.badge}</p>
-          <h1>{data.hero.title}</h1>
-          <p className="heroSubtitle">{data.hero.subtitle}</p>
+          <div className="heroGrid">
+            <div>
+              <p className="badge">{data.hero.badge}</p>
+              <h1>{data.hero.title}</h1>
+              <p className="heroSubtitle">{data.hero.subtitle}</p>
 
-          <div className="ctaRow">
-            <a href={contactsData.telegram} className="btn btnPrimary" target="_blank" rel="noreferrer">
-              {data.hero.primaryCta}
-            </a>
-            <a href={contactsData.youtube} className="btn btnGhost" target="_blank" rel="noreferrer">
-              {data.hero.secondaryCta}
-            </a>
+              <div className="ctaRow">
+                <a href={contactsData.telegram} className="btn btnPrimary" target="_blank" rel="noreferrer">
+                  {data.hero.primaryCta}
+                </a>
+                <a href={contactsData.youtube} className="btn btnGhost" target="_blank" rel="noreferrer">
+                  {data.hero.secondaryCta}
+                </a>
+              </div>
+            </div>
+
+            <div className="heroVisual" aria-label="Hero photo placeholder">
+              <span>{locale === "uk" ? "Тут буде головне фото" : "Hero photo placeholder"}</span>
+            </div>
           </div>
 
           <div className="statsGrid">
@@ -82,6 +90,34 @@ export default async function LocalePage({ params }: LocalePageProps) {
                 <strong>{item.value}</strong>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="container section proofStrip">
+          <article className="faceCard">
+            <div className="facePhoto">{locale === "uk" ? "Фото тренера" : "Coach photo"}</div>
+            <div>
+              <p className="faceLabel">{locale === "uk" ? "Персональний супровід" : "Personal coaching"}</p>
+              <h3>{locale === "uk" ? "Результат через системність" : "Progress through consistency"}</h3>
+            </div>
+          </article>
+          <div className="proofGrid">
+            <article className="percentCard">
+              <strong>87%</strong>
+              <p>
+                {locale === "uk"
+                  ? "відмічають покращення мобільності за перші 6 тижнів"
+                  : "report better mobility within the first 6 weeks"}
+              </p>
+            </article>
+            <article className="percentCard">
+              <strong>92%</strong>
+              <p>
+                {locale === "uk"
+                  ? "кажуть, що онлайн-формат легко вбудувати у графік"
+                  : "say the online format fits naturally into their schedule"}
+              </p>
+            </article>
           </div>
         </section>
 
