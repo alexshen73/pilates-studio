@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope, Poppins } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 
 import "@/app/globals.css";
 
@@ -15,12 +15,6 @@ const bodyFont = Manrope({
   weight: ["400", "500", "600", "700"],
 });
 
-const bodyLatinFont = Poppins({
-  variable: "--font-body-latin",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://example.com"),
   title: {
@@ -33,9 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${headingFont.variable} ${bodyFont.variable} ${bodyLatinFont.variable}`}>
-        {children}
-      </body>
+      <body className={`${headingFont.variable} ${bodyFont.variable}`}>{children}</body>
     </html>
   );
 }

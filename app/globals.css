@@ -25,7 +25,7 @@ body {
   margin: 0;
   color: var(--text);
   background: var(--bg);
-  font-family: "Poppins", var(--font-body-latin), var(--font-body), "Trebuchet MS", sans-serif;
+  font-family: var(--font-body), "Trebuchet MS", sans-serif;
   line-height: 1.55;
 }
 
@@ -155,7 +155,7 @@ h2,
 h3 {
   margin: 0;
   line-height: 1.1;
-  font-family: "Halogen-Md", var(--font-heading), Georgia, serif;
+  font-family: var(--font-heading), Georgia, serif;
 }
 
 h1 {
