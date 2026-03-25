@@ -1,15 +1,15 @@
 :root {
-  --bg: #efe5d8;
-  --bg-soft: #f6efe6;
-  --surface: #f8f1e8;
-  --surface-strong: #ecdfcf;
-  --text: #26241f;
-  --muted: #6f665b;
-  --primary: #1e4d46;
-  --primary-strong: #163c37;
-  --accent: #b67c57;
-  --border: rgba(38, 36, 31, 0.14);
-  --ring: rgba(30, 77, 70, 0.22);
+  --bg: rgb(255, 250, 244);
+  --bg-soft: #f9f5ef;
+  --surface: #fffaf4;
+  --surface-strong: rgb(216, 215, 200);
+  --text: rgb(60, 64, 30);
+  --muted: #6c7050;
+  --primary: #4b4f2a;
+  --primary-strong: #3a3d20;
+  --accent: rgb(216, 215, 200);
+  --border: rgba(60, 64, 30, 0.18);
+  --ring: rgba(75, 79, 42, 0.24);
 }
 
 * {
@@ -24,10 +24,7 @@ html {
 body {
   margin: 0;
   color: var(--text);
-  background:
-    radial-gradient(circle at 9% 11%, #f4ece2 0%, rgba(244, 236, 226, 0) 38%),
-    radial-gradient(circle at 84% 7%, #e8d7c5 0%, rgba(232, 215, 197, 0) 36%),
-    var(--bg);
+  background: var(--bg);
   font-family: var(--font-body), "Trebuchet MS", sans-serif;
   line-height: 1.55;
 }
@@ -49,26 +46,15 @@ a {
 }
 
 .bgShape {
-  position: absolute;
-  border-radius: 999px;
-  z-index: -1;
-  filter: blur(44px);
+  display: none;
 }
 
 .bgShapeOne {
-  width: 24rem;
-  height: 24rem;
-  top: -8rem;
-  right: -5rem;
-  background: rgba(30, 77, 70, 0.2);
+  display: none;
 }
 
 .bgShapeTwo {
-  width: 20rem;
-  height: 20rem;
-  top: 30rem;
-  left: -8rem;
-  background: rgba(182, 124, 87, 0.24);
+  display: none;
 }
 
 .header {
@@ -81,8 +67,8 @@ a {
   top: 0;
   z-index: 15;
   backdrop-filter: blur(8px);
-  background: rgba(246, 239, 230, 0.86);
-  border-bottom: 1px solid rgba(38, 36, 31, 0.08);
+  background: rgba(255, 250, 244, 0.92);
+  border-bottom: 1px solid rgba(60, 64, 30, 0.1);
 }
 
 .brandMark {
@@ -155,11 +141,11 @@ a {
 .badge {
   width: fit-content;
   margin: 0;
-  border: 1px solid rgba(30, 77, 70, 0.4);
+  border: 1px solid rgba(75, 79, 42, 0.4);
   border-radius: 999px;
   padding: 0.35rem 0.8rem;
   color: var(--primary-strong);
-  background: rgba(30, 77, 70, 0.08);
+  background: rgba(75, 79, 42, 0.08);
   font-size: 0.82rem;
   letter-spacing: 0.03em;
 }
@@ -188,16 +174,16 @@ h1 {
 
 .heroVisual {
   min-height: 300px;
-  border: 1px dashed rgba(30, 77, 70, 0.35);
+  border: 1px dashed rgba(75, 79, 42, 0.35);
   border-radius: 1.2rem;
   background:
-    linear-gradient(145deg, rgba(255, 249, 242, 0.92), rgba(233, 219, 205, 0.94)),
+    linear-gradient(145deg, rgba(255, 250, 244, 0.95), rgba(231, 230, 216, 0.95)),
     repeating-linear-gradient(
       60deg,
-      rgba(182, 124, 87, 0.08),
-      rgba(182, 124, 87, 0.08) 12px,
-      rgba(30, 77, 70, 0.08) 12px,
-      rgba(30, 77, 70, 0.08) 24px
+      rgba(216, 215, 200, 0.14),
+      rgba(216, 215, 200, 0.14) 12px,
+      rgba(75, 79, 42, 0.08) 12px,
+      rgba(75, 79, 42, 0.08) 24px
     );
   display: grid;
   place-items: center;
@@ -311,7 +297,7 @@ h1 {
 .faceCard {
   border: 1px solid var(--border);
   border-radius: 1rem;
-  background: #f3e8dc;
+  background: #f0efe3;
   padding: 0.85rem;
   display: grid;
   gap: 0.85rem;
@@ -321,8 +307,8 @@ h1 {
 .facePhoto {
   min-height: 120px;
   border-radius: 0.85rem;
-  border: 1px dashed rgba(30, 77, 70, 0.35);
-  background: linear-gradient(150deg, #f9f1e8, #e6d6c5);
+  border: 1px dashed rgba(75, 79, 42, 0.35);
+  background: linear-gradient(150deg, #fffaf4, #e7e6d6);
   display: grid;
   place-items: center;
   color: var(--muted);
@@ -331,7 +317,7 @@ h1 {
 
 .faceLabel {
   margin: 0;
-  color: var(--accent);
+  color: var(--primary);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.72rem;
@@ -393,10 +379,10 @@ h1 {
 }
 
 .visualBlock {
-  border: 1px dashed rgba(30, 77, 70, 0.34);
+  border: 1px dashed rgba(75, 79, 42, 0.34);
   border-radius: 1rem;
   min-height: 160px;
-  background: linear-gradient(160deg, #f8f0e7, #e6d7c6);
+  background: linear-gradient(160deg, #fffaf4, #e6e5d8);
   color: #6a7d77;
   display: grid;
   place-items: center;
@@ -406,10 +392,10 @@ h1 {
 }
 
 .profileCard {
-  border: 1px dashed rgba(30, 77, 70, 0.34);
+  border: 1px dashed rgba(75, 79, 42, 0.34);
   border-radius: 1rem;
   padding: 1rem;
-  background: linear-gradient(145deg, #fef8f0, #eadccc);
+  background: linear-gradient(145deg, #fffaf4, #ecebdc);
 }
 
 .visualTrainer {
@@ -422,8 +408,8 @@ h1 {
   margin: 0;
   padding: 0.3rem 0.65rem;
   border-radius: 999px;
-  background: rgba(182, 124, 87, 0.18);
-  color: #8c5e3f;
+  background: rgba(75, 79, 42, 0.12);
+  color: #585d31;
   font-size: 0.8rem;
 }
 
