@@ -11,12 +11,14 @@ type LocalePageProps = {
 };
 
 const contactsData = {
-  instagram: "https://instagram.com/yourprofile",
-  tiktok: "https://tiktok.com/@yourprofile",
-  youtube: "https://youtube.com/@yourchannel",
-  telegram: "https://t.me/yourchannel",
-  email: "mailto:hello@pilates.example",
-  phone: "tel:+380000000000",
+  instagram: "https://www.instagram.com/pilates_yuliya",
+  tiktok: "https://www.tiktok.com/@pilates_yuliya",
+  youtube: "https://www.youtube.com/@PilatesYuliya",
+  telegram: "https://t.me/pilatesyuliya",
+  email: "https://mail.google.com/mail/?view=cm&fs=1&to=pilates.yuliya.coach@gmail.com",
+  emailLabel: "pilates.yuliya.coach@gmail.com",
+  phone: "tel:+380972813267",
+  phoneLabel: "+380 97 281 32 67",
 };
 
 export default async function LocalePage({ params }: LocalePageProps) {
@@ -254,17 +256,17 @@ export default async function LocalePage({ params }: LocalePageProps) {
               </span>
               {data.contacts.telegram}
             </a>
-            <a href={contactsData.email} className="contactLink">
+            <a href={contactsData.email} className="contactLink" target="_blank" rel="noreferrer">
               <span className="iconChip">
                 <ContactIcon name="email" />
               </span>
-              {data.contacts.email}
+              {contactsData.emailLabel}
             </a>
             <a href={contactsData.phone} className="contactLink">
               <span className="iconChip">
                 <ContactIcon name="phone" />
               </span>
-              {data.contacts.phone}
+              {contactsData.phoneLabel}
             </a>
           </div>
         </section>
