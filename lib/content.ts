@@ -198,7 +198,7 @@ export const content: Record<Locale, LandingContent> = {
       items: [
         {
           q: "Чи підходить пілатес новачкам?",
-          a: "Так, план будується від базового рівня та поступово ускладнюється.",
+          a: "Так, пілатес добре підходить новачкам. На старті тренер проводить коротке тестування вашого рівня підготовки, мобільності та техніки руху, після чого складає індивідуальну програму саме під ваші цілі. Ми починаємо з базових і безпечних вправ та поступово ускладнюємо навантаження у комфортному для вас темпі.",
         },
         {
           q: "Що потрібно для онлайн-заняття?",
@@ -206,7 +206,7 @@ export const content: Record<Locale, LandingContent> = {
         },
         {
           q: "Чи можна займатися при болях у спині?",
-          a: "У більшості випадків так, але зі стартовою оцінкою стану і м'якою адаптацією вправ.",
+          a: "У більшості випадків так, але лише після короткої первинної оцінки стану. На старті тренер уточнює ваші симптоми, рівень болю, обмеження в рухах і попередній досвід занять, щоб підібрати безпечний формат навантаження. Програма будується м’яко: з акцентом на стабілізацію, дихання, мобільність і контроль техніки без різких або провокуючих рухів. У процесі заняття адаптуються під самопочуття, а навантаження підвищується поступово, щоб зменшити дискомфорт і повернути впевненість у русі.",
         },
       ],
     },
@@ -351,7 +351,7 @@ export const content: Record<Locale, LandingContent> = {
       items: [
         {
           q: "Is pilates suitable for beginners?",
-          a: "Yes. We start from fundamentals and scale intensity step by step.",
+          a: "Yes, absolutely. We start with a short assessment of your current level, mobility, and movement quality, then build a personalized program around your goals. You begin with safe fundamentals and progress step by step at a comfortable pace.",
         },
         {
           q: "What do I need for online classes?",
