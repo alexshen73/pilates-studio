@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { ContactIcon } from "@/components/contact-icon";
 import { LanguageSwitch } from "@/components/language-switch";
+import { ScrollTopButton } from "@/components/scroll-top-button";
 import { content } from "@/lib/content";
 import { isLocale, type Locale } from "@/lib/i18n";
 
@@ -273,9 +274,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
         </section>
       </main>
 
-      <a href="#top" className="upButton" aria-label="Scroll to top">
-        ↑
-      </a>
+      <ScrollTopButton />
 
       <footer className="container footer">(c) {currentYear} {data.footer}</footer>
 

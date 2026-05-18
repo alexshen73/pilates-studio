@@ -101,7 +101,7 @@ export const content: Record<Locale, LandingContent> = {
     about: {
       title: "Що таке пілатес",
       description:
-        "Пілатес — це більше, ніж тренування. Це поєднання мистецтва руху, наукового підходу та філософії турботи про тіло на кожному етапі життя. Метод, створений Джозефом Пілатесом, базується на точних і усвідомлених рухах, що зміцнюють м’язи, покращують поставу та вирівнювання тіла, а також підвищують загальну фізичну підготовку. У роботі я спираюся на класичні принципи пілатесу, адаптуючи кожне заняття під ваші потреби, рівень і самопочуття. Незалежно від того, чи ви хочете стати сильнішими, відновитися після перерви або травми, чи просто рухатися вільніше, програма підбирається так, щоб ви безпечно прогресували у комфортному темпі.",
+        "Пілатес — це безпечна система тренувань, яка формує сильний центр тіла, покращує поставу та рухливість без перевантаження суглобів. Завдяки контрольованим рухам і диханню ви зменшуєте напруження в спині та шиї, краще відчуваєте своє тіло й поступово повертаєтеся до активності у комфортному темпі.",
       points: [
         "Менше болю та напруги у спині й шиї",
         "Рівна постава та сильний м'язовий корсет",
@@ -279,7 +279,7 @@ export const content: Record<Locale, LandingContent> = {
     about: {
       title: "What Is Pilates",
       description:
-        "Pilates is more than a workout. It is a blend of movement art, science, and a lifelong philosophy of body care. Developed by Joseph Pilates, this method is built on intentional, precise movement that strengthens the body, improves alignment and posture, and supports overall physical conditioning. In my practice, I stay true to core classical Pilates principles while tailoring each session to your needs, level, and current condition. Whether your goal is to build strength, recover after a break or injury, or simply move with more ease, each program is designed to help you progress safely and confidently.",
+        "Pilates is a safe training system that builds a strong core, improves posture, and increases mobility without overloading the joints. Through controlled movement and breathing, you reduce tension in your back and neck, improve body awareness, and return to activity gradually at a comfortable pace.",
       points: [
         "Less pain and tension in your back and neck",
         "Better posture and a stronger core",
