@@ -24,17 +24,16 @@ export default async function BlogPage({ params }: BlogPageProps) {
       </Link>
       <section className="section block" style={{ marginTop: "1rem" }}>
         <h1 style={{ fontFamily: "Georgia, serif", margin: 0 }}>{data.blog.title}</h1>
-        <p>{data.blog.description}</p>
+        {data.blog.description ? <p>{data.blog.description}</p> : null}
         <div className="programGrid">
           {data.blog.posts.map((post) => (
-            <article key={post.title} className="programCard">
+            <Link key={post.slug} href={`/${locale}/blog/${post.slug}`} className="programCard">
               <h2 style={{ margin: 0, fontSize: "1.2rem" }}>{post.title}</h2>
               <p>{post.excerpt}</p>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
     </main>
   );
 }
-

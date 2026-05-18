@@ -30,6 +30,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
 
   const data = content[locale as Locale];
   const currentYear = new Date().getFullYear();
+  const trainerName = locale === "en" ? "Yuliia Shendryk" : "Юлія Шендрик";
 
   const schema = {
     "@context": "https://schema.org",
@@ -129,7 +130,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
               <h2>{data.about.title}</h2>
               <p>{data.about.description}</p>
             </div>
-            <div className="visualBlock">Image: mindful movement</div>
+            <div className="visualBlock visualAbout">Image: mindful movement</div>
           </div>
           <ul className="pointList">
             {data.about.points.map((point) => (
@@ -161,10 +162,10 @@ export default async function LocalePage({ params }: LocalePageProps) {
               ))}
             </ul>
           </article>
-          <article className="profileCard" aria-label="Trainer card">
-            <div className="visualBlock visualTrainer">Image: trainer portrait</div>
+          <article className="profileCard" aria-label="Coach card">
+            <div className="visualBlock visualTrainer">Image: coach portrait</div>
             <p className="profileTag">Expert</p>
-            <h3>Pilates Coach</h3>
+            <h3>{trainerName}</h3>
             <p>{data.trainer.photoNote}</p>
           </article>
         </section>

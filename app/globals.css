@@ -656,6 +656,10 @@ h1 {
     padding-top: 5rem;
   }
 
+  .visualAbout {
+    min-height: 300px;
+  }
+
   .cardGrid,
   .programGrid,
   .faqGrid {
