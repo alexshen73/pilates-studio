@@ -165,6 +165,13 @@ h1 {
   letter-spacing: -0.015em;
 }
 
+.blogTitle {
+  margin: 0;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  max-width: 18ch;
+  line-height: 1.08;
+}
+
 .heroSubtitle {
   margin-top: 0.95rem;
   max-width: 56ch;

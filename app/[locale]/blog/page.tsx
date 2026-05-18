@@ -23,7 +23,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
         {locale === "uk" ? "Повернутися на головну" : "Back to landing"}
       </Link>
       <section className="section block" style={{ marginTop: "1rem" }}>
-        <h1 style={{ fontFamily: "Georgia, serif", margin: 0 }}>{data.blog.title}</h1>
+        <h1 className="blogTitle">{data.blog.title}</h1>
         {data.blog.description ? <p>{data.blog.description}</p> : null}
         <div className="programGrid">
           {data.blog.posts.map((post) => (

@@ -38,7 +38,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
       </Link>
 
       <article className="section block" style={{ marginTop: "1rem" }}>
-        <h1 style={{ fontFamily: "Georgia, serif", margin: 0 }}>{post.title}</h1>
+        <h1 className="blogTitle">{post.title}</h1>
         <p style={{ color: "var(--muted)" }}>{post.excerpt}</p>
         <div style={{ display: "grid", gap: "0.9rem", marginTop: "1rem" }}>
           {post.content.map((paragraph) => (
