@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ContactIcon } from "@/components/contact-icon";
+import { LeadForm } from "@/components/lead-form";
 import { LanguageSwitch } from "@/components/language-switch";
 import { ScrollTopButton } from "@/components/scroll-top-button";
 import { content } from "@/lib/content";
@@ -73,9 +74,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
               <p className="heroSubtitle">{data.hero.subtitle}</p>
 
               <div className="ctaRow">
-                <a href={contactsData.telegram} className="btn btnPrimary" target="_blank" rel="noreferrer">
-                  {data.hero.primaryCta}
-                </a>
+                <LeadForm locale={locale as Locale} ctaLabel={data.hero.primaryCta} />
                 <a href={contactsData.youtube} className="btn btnGhost" target="_blank" rel="noreferrer">
                   {data.hero.secondaryCta}
                 </a>

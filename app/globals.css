@@ -224,6 +224,9 @@ h1 {
   border: 1px solid transparent;
   font-weight: 600;
   font-size: 0.93rem;
+  font: inherit;
+  cursor: pointer;
+  text-align: center;
 }
 
 .btnPrimary {
@@ -236,6 +239,11 @@ h1 {
   background: var(--primary-strong);
 }
 
+.btn:disabled {
+  cursor: progress;
+  opacity: 0.72;
+}
+
 .btnGhost {
   border-color: var(--border);
   background: var(--surface);
@@ -244,6 +252,174 @@ h1 {
 .btnGhost:hover,
 .btnGhost:focus-visible {
   border-color: var(--primary);
+}
+
+.leadOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(35, 50, 71, 0.42);
+  backdrop-filter: blur(7px);
+}
+
+.leadModal {
+  width: min(520px, 100%);
+  max-height: min(720px, calc(100vh - 2rem));
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 24px 72px rgba(35, 50, 71, 0.24);
+}
+
+.leadModalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 1.2rem 0;
+}
+
+.leadModalHeader h2 {
+  font-size: clamp(1.7rem, 5vw, 2.25rem);
+  letter-spacing: 0;
+}
+
+.leadModalHeader p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+}
+
+.leadClose {
+  width: 2.35rem;
+  height: 2.35rem;
+  min-width: 2.35rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-strong);
+  color: var(--primary-strong);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.leadClose:hover,
+.leadClose:focus-visible {
+  border-color: var(--primary);
+}
+
+.leadForm {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem 1.2rem 1.2rem;
+}
+
+.leadField,
+.leadFieldset {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.leadField span,
+.leadFieldset legend {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.leadFieldset legend {
+  margin-bottom: 0.42rem;
+  padding: 0;
+}
+
+.leadFieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.leadInput {
+  width: 100%;
+  min-height: 2.85rem;
+  border: 1px solid var(--border);
+  border-radius: 0.78rem;
+  padding: 0.68rem 0.82rem;
+  background: #f3f7fd;
+  color: var(--text);
+  font: inherit;
+}
+
+.leadInput:hover,
+.leadInput:focus,
+.formatChoice:hover,
+.formatChoice:focus-within {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.formatChoices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.formatChoice {
+  min-height: 2.85rem;
+  border: 1px solid var(--border);
+  border-radius: 0.78rem;
+  background: #f3f7fd;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0.48rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.formatChoice input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.formatChoice:has(input:checked) {
+  border-color: var(--primary);
+  background: rgba(75, 111, 153, 0.13);
+  color: var(--primary-strong);
+}
+
+.leadTrap {
+  position: absolute;
+  left: -9999px;
+}
+
+.leadPrivacy,
+.leadMessage {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.leadMessageError {
+  color: #9b3d3d;
+}
+
+.leadSubmit {
+  width: 100%;
+}
+
+.leadSuccess {
+  display: grid;
+  justify-items: start;
+  padding: 1rem 1.2rem 1.2rem;
 }
 
 .statsGrid {

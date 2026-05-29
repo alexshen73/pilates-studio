@@ -15,6 +15,16 @@ npm run dev
 ```
 Open `http://localhost:3000` (redirects to `/uk`).
 
+## Telegram lead form
+Create `.env.local` from `.env.example` and fill in:
+
+```bash
+TELEGRAM_BOT_TOKEN=your_botfather_token
+TELEGRAM_CHAT_ID=your_group_or_private_chat_id
+```
+
+On Vercel, add the same variables in `Settings` -> `Environment Variables`, then redeploy.
+
 ## Replace before launch
 - In `app/layout.tsx`, set `metadataBase` to your production domain.
 - In `app/sitemap.ts` and `app/robots.ts`, replace `https://example.com`.
@@ -45,4 +55,3 @@ Open `http://localhost:3000` (redirects to `/uk`).
 ## Language routes
 - Ukrainian: `/uk`
 - English: `/en`
-
