@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 
 import type { Locale } from "@/lib/i18n";
+import { isValidEmail, isValidPhone, normalizeContact } from "@/lib/lead-validation";
 
 type LeadFormProps = {
   locale: Locale;
@@ -30,8 +31,10 @@ const formCopy = {
     description: "Залиште контакти, і ми узгодимо зручний формат та час.",
     nameLabel: "Ім'я",
     namePlaceholder: "Ваше ім'я",
-    contactLabel: "Телефон або пошта",
-    contactPlaceholder: "+380 або email",
+    phoneLabel: "Телефон",
+    phonePlaceholder: "+380...",
+    emailLabel: "Email",
+    emailPlaceholder: "your@email.com",
     formatLabel: "Формат занять",
     submit: "Надіслати заявку",
     sending: "Надсилаємо...",
@@ -40,15 +43,19 @@ const formCopy = {
     successMessage: "Дякуємо! Ми зв'яжемося з вами найближчим часом.",
     errorMessage: "Не вдалося надіслати заявку. Спробуйте ще раз або напишіть у Telegram.",
     privacy: "Дані підуть тільки тренеру для зв'язку щодо заняття.",
-    required: "Заповніть ім'я, контакт і формат занять.",
+    required: "Заповніть ім'я, телефон або email, і формат занять.",
+    invalidPhone: "Вкажіть коректний номер телефону.",
+    invalidEmail: "Вкажіть коректний email.",
   },
   en: {
     title: "Book a Trial Session",
     description: "Leave your contact details, and we will arrange a comfortable format and time.",
     nameLabel: "Name",
     namePlaceholder: "Your name",
-    contactLabel: "Phone or email",
-    contactPlaceholder: "+380 or email",
+    phoneLabel: "Phone",
+    phonePlaceholder: "+380...",
+    emailLabel: "Email",
+    emailPlaceholder: "your@email.com",
     formatLabel: "Training format",
     submit: "Send request",
     sending: "Sending...",
@@ -57,7 +64,9 @@ const formCopy = {
     successMessage: "Thank you! We will contact you shortly.",
     errorMessage: "The request could not be sent. Please try again or message us on Telegram.",
     privacy: "Your details go only to the coach for class-related contact.",
-    required: "Please fill in your name, contact, and training format.",
+    required: "Please fill in your name, phone or email, and training format.",
+    invalidPhone: "Enter a valid phone number.",
+    invalidEmail: "Enter a valid email address.",
   },
 } as const;
 
@@ -113,12 +122,25 @@ export function LeadForm({ locale, ctaLabel }: LeadFormProps) {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const name = String(formData.get("name") ?? "").trim();
-    const contact = String(formData.get("contact") ?? "").trim();
+    const phone = normalizeContact(String(formData.get("phone") ?? ""));
+    const email = normalizeContact(String(formData.get("email") ?? "")).toLowerCase();
     const website = String(formData.get("website") ?? "").trim();
 
-    if (!name || !contact || !selectedFormat) {
+    if (!name || (!phone && !email) || !selectedFormat) {
       setStatus("error");
       setMessage(copy.required);
+      return;
+    }
+
+    if (phone && !isValidPhone(phone)) {
+      setStatus("error");
+      setMessage(copy.invalidPhone);
+      return;
+    }
+
+    if (email && !isValidEmail(email)) {
+      setStatus("error");
+      setMessage(copy.invalidEmail);
       return;
     }
 
@@ -133,7 +155,8 @@ export function LeadForm({ locale, ctaLabel }: LeadFormProps) {
         },
         body: JSON.stringify({
           name,
-          contact,
+          phone,
+          email,
           format: selectedFormat,
           locale,
           website,
@@ -142,6 +165,20 @@ export function LeadForm({ locale, ctaLabel }: LeadFormProps) {
       });
 
       if (!response.ok) {
+        const responseData = (await response.json().catch(() => null)) as { error?: string } | null;
+
+        if (response.status === 400 && responseData?.error === "MISSING_CONTACT") {
+          setStatus("error");
+          setMessage(copy.required);
+          return;
+        }
+
+        if (response.status === 400 && responseData?.error === "INVALID_CONTACT") {
+          setStatus("error");
+          setMessage(phone ? copy.invalidPhone : copy.invalidEmail);
+          return;
+        }
+
         throw new Error("Lead request failed");
       }
 
@@ -202,14 +239,26 @@ export function LeadForm({ locale, ctaLabel }: LeadFormProps) {
                 </label>
 
                 <label className="leadField">
-                  <span>{copy.contactLabel}</span>
+                  <span>{copy.phoneLabel}</span>
                   <input
                     className="leadInput"
-                    name="contact"
+                    name="phone"
                     type="text"
-                    autoComplete="email tel"
-                    placeholder={copy.contactPlaceholder}
-                    required
+                    autoComplete="tel"
+                    inputMode="tel"
+                    placeholder={copy.phonePlaceholder}
+                  />
+                </label>
+
+                <label className="leadField">
+                  <span>{copy.emailLabel}</span>
+                  <input
+                    className="leadInput"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    inputMode="email"
+                    placeholder={copy.emailPlaceholder}
                   />
                 </label>
 

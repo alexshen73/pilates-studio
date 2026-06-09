@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+import { isValidEmail, isValidPhone, normalizeContact } from "@/lib/lead-validation";
+
 const validFormats = ["online", "group", "individual"] as const;
 
 type LeadFormat = (typeof validFormats)[number];
@@ -48,7 +50,8 @@ export async function POST(request: Request) {
 
   const data = payload as Record<string, unknown>;
   const name = getText(data.name);
-  const contact = getText(data.contact);
+  const phone = normalizeContact(getText(data.phone));
+  const email = normalizeContact(getText(data.email)).toLowerCase();
   const format = getText(data.format);
   const locale = getText(data.locale) || "uk";
   const page = getText(data.page);
@@ -58,15 +61,23 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  if (name.length < 2 || contact.length < 5 || !isLeadFormat(format)) {
-    return NextResponse.json({ error: "Invalid lead data" }, { status: 400 });
+  const hasPhone = phone.length > 0;
+  const hasEmail = email.length > 0;
+
+  if (name.length < 2 || (!hasPhone && !hasEmail) || !isLeadFormat(format)) {
+    return NextResponse.json({ error: "MISSING_CONTACT" }, { status: 400 });
+  }
+
+  if ((hasPhone && !isValidPhone(phone)) || (hasEmail && !isValidEmail(email))) {
+    return NextResponse.json({ error: "INVALID_CONTACT" }, { status: 400 });
   }
 
   const message = [
     "Нова заявка з сайту Pilates Studio",
     "",
     `Ім'я: ${name}`,
-    `Контакт: ${contact}`,
+    hasPhone ? `Телефон: ${phone}` : "",
+    hasEmail ? `Email: ${email}` : "",
     `Формат: ${formatLabels[format]}`,
     `Мова сторінки: ${locale === "en" ? "English" : "Українська"}`,
     `Час: ${getKyivTime()}`,

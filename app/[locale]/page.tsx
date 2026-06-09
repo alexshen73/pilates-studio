@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -81,8 +82,16 @@ export default async function LocalePage({ params }: LocalePageProps) {
               </div>
             </div>
 
-            <div className="heroVisual" aria-label="Hero photo placeholder">
-              <span>{locale === "uk" ? "Тут буде головне фото" : "Hero photo placeholder"}</span>
+            <div className="heroVisual">
+              <Image
+                src="/photos/hero.webp"
+                alt={locale === "uk" ? "Тренування з пілатесу" : "Pilates training session"}
+                fill
+                priority
+                unoptimized
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="heroVisualImage"
+              />
             </div>
           </div>
 
@@ -98,7 +107,16 @@ export default async function LocalePage({ params }: LocalePageProps) {
 
         <section className="container section proofStrip">
           <article className="faceCard">
-            <div className="facePhoto">{locale === "uk" ? "Фото тренера" : "Coach photo"}</div>
+            <div className="facePhoto">
+              <Image
+                src="/photos/fact.webp"
+                alt={locale === "uk" ? "Результат занять пілатесом" : "Pilates training result"}
+                fill
+                unoptimized
+                sizes="(min-width: 768px) 32vw, 100vw"
+                className="facePhotoImage"
+              />
+            </div>
             <div>
               <p className="faceLabel">{locale === "uk" ? "Персональний супровід" : "Personal coaching"}</p>
               <h3>{locale === "uk" ? "Результат через системність" : "Progress through consistency"}</h3>
@@ -130,7 +148,16 @@ export default async function LocalePage({ params }: LocalePageProps) {
               <h2>{data.about.title}</h2>
               <p>{data.about.description}</p>
             </div>
-            <div className="visualBlock visualAbout">Image: mindful movement</div>
+            <div className="visualBlock visualAbout">
+              <Image
+                src="/photos/pilates.webp"
+                alt={locale === "uk" ? "Що таке пілатес" : "What is pilates"}
+                fill
+                unoptimized
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="visualBlockImage"
+              />
+            </div>
           </div>
           <ul className="pointList">
             {data.about.points.map((point) => (
@@ -163,7 +190,16 @@ export default async function LocalePage({ params }: LocalePageProps) {
             </ul>
           </article>
           <article className="profileCard" aria-label="Coach card">
-            <div className="visualBlock visualTrainer">Image: coach portrait</div>
+            <div className="visualBlock visualTrainer">
+              <Image
+                src="/photos/coach.webp"
+                alt={locale === "uk" ? "Тренер Юлія Шендрик" : "Coach Yuliia Shendryk"}
+                fill
+                unoptimized
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="visualBlockImage visualTrainerImage"
+              />
+            </div>
             <p className="profileTag">Expert</p>
             <h3>{trainerName}</h3>
             <p>{data.trainer.photoNote}</p>
@@ -187,7 +223,28 @@ export default async function LocalePage({ params }: LocalePageProps) {
             <div>
               <h2>{data.formats.title}</h2>
             </div>
-            <div className="visualBlock">Image: online pilates setup</div>
+            <div className="formatVisuals" aria-label={locale === "uk" ? "Формати занять" : "Training formats"}>
+              <div className="formatVisual">
+                <Image
+                  src="/photos/group.webp"
+                  alt={locale === "uk" ? "Групові заняття пілатесом" : "Group pilates session"}
+                  fill
+                  unoptimized
+                  sizes="(min-width: 768px) 24vw, 100vw"
+                  className="visualBlockImage"
+                />
+              </div>
+              <div className="formatVisual">
+                <Image
+                  src="/photos/online.webp"
+                  alt={locale === "uk" ? "Онлайн заняття пілатесом" : "Online pilates session"}
+                  fill
+                  unoptimized
+                  sizes="(min-width: 768px) 24vw, 100vw"
+                  className="visualBlockImage"
+                />
+              </div>
+            </div>
           </div>
           <div className="cardGrid">
             {data.formats.cards.map((card) => (
@@ -277,10 +334,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
 
       <footer className="container footer">(c) {currentYear} {data.footer}</footer>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </div>
   );
 }

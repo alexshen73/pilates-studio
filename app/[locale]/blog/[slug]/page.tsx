@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { blogPreviewImages } from "@/lib/blog-images";
 import { content } from "@/lib/content";
 import { isLocale, locales, type Locale } from "@/lib/i18n";
 
@@ -40,6 +42,19 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
       <article className="section block" style={{ marginTop: "1rem" }}>
         <h1 className="blogTitle">{post.title}</h1>
         <p style={{ color: "var(--muted)" }}>{post.excerpt}</p>
+        {blogPreviewImages[post.slug] ? (
+          <div className="blogArticleImageWrap">
+            <Image
+              src={blogPreviewImages[post.slug]}
+              alt={post.title}
+              fill
+              unoptimized
+              priority
+              sizes="(min-width: 1024px) 70vw, 100vw"
+              className="programCardImage"
+            />
+          </div>
+        ) : null}
         <div style={{ display: "grid", gap: "0.9rem", marginTop: "1rem" }}>
           {post.content.map((paragraph) => (
             <p key={paragraph} style={{ margin: 0 }}>
