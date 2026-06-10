@@ -71,9 +71,39 @@ a {
   border-bottom: 1px solid rgba(35, 50, 71, 0.1);
 }
 
+.headerBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
 .brandMark {
   display: inline-flex;
   align-items: center;
+}
+
+.menuToggle {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-grid;
+  gap: 0.22rem;
+  align-content: center;
+  justify-items: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--primary-strong);
+  box-shadow: 0 8px 18px rgba(35, 50, 71, 0.08);
+  cursor: pointer;
+}
+
+.menuToggle span {
+  width: 0.9rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
 }
 
 .brandLogo {
@@ -120,11 +150,84 @@ a {
 }
 
 .langSwitch {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  background: var(--surface);
+  color: var(--primary-strong);
+  box-shadow: 0 8px 18px rgba(35, 50, 71, 0.08);
+}
+
+.mobileNavOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  background: rgba(35, 50, 71, 0.42);
+  backdrop-filter: blur(7px);
+}
+
+.mobileNavPanel {
+  width: 100%;
+  min-height: 100dvh;
+  padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
+  background: var(--surface);
+  box-shadow: 0 24px 72px rgba(35, 50, 71, 0.18);
+  overflow-y: auto;
+}
+
+.mobileNavHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  max-width: 34rem;
+  margin-inline: auto;
+}
+
+.mobileNavClose {
+  width: 2.35rem;
+  height: 2.35rem;
+  min-width: 2.35rem;
+  padding: 0;
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 0.38rem 0.72rem;
-  font-size: 0.84rem;
-  background: var(--surface);
+  background: var(--surface-strong);
+  color: var(--primary-strong);
+  cursor: pointer;
+  font: inherit;
+}
+
+.mobileNavList {
+  display: grid;
+  gap: 0.45rem;
+  max-width: 34rem;
+  margin-inline: auto;
+}
+
+.mobileNavList a {
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  background: #f3f7fd;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.mobileNavList a:hover,
+.mobileNavList a:focus-visible,
+.mobileNavClose:hover,
+.mobileNavClose:focus-visible,
+.menuToggle:hover,
+.menuToggle:focus-visible {
+  border-color: var(--primary);
 }
 
 .hero {
@@ -851,6 +954,16 @@ h1 {
 }
 
 @media (min-width: 768px) {
+  .langSwitch {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menuToggle,
+  .mobileNavOverlay {
+    display: none;
+  }
+
   .leadOverlay {
     padding: 1rem;
   }

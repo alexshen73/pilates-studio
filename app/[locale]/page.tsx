@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 import { ContactIcon } from "@/components/contact-icon";
 import { LeadForm } from "@/components/lead-form";
-import { LanguageSwitch } from "@/components/language-switch";
+import { SiteHeader } from "@/components/site-header";
 import { ScrollTopButton } from "@/components/scroll-top-button";
 import { content } from "@/lib/content";
 import { isLocale, type Locale } from "@/lib/i18n";
@@ -49,22 +49,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
       <div className="bgShape bgShapeOne" aria-hidden />
       <div className="bgShape bgShapeTwo" aria-hidden />
 
-      <header className="container header">
-        <Link href={`/${locale}`} className="brandMark">
-          <img src="../brand/logo-calm-a.svg" alt="Pilates Studio" className="brandLogo" />
-        </Link>
-        <nav className="navList" aria-label="Primary">
-          <a href="#about">{data.nav.about}</a>
-          <a href="#who-for">{data.nav.whoFor}</a>
-          <a href="#trainer">{data.nav.trainer}</a>
-          <a href="#testimonials">{data.nav.testimonials}</a>
-          <a href="#formats">{data.nav.formats}</a>
-          <a href="#blog">{data.nav.blog}</a>
-          <a href="#faq">{data.nav.faq}</a>
-          <a href="#contacts">{data.nav.contacts}</a>
-        </nav>
-        <LanguageSwitch locale={locale as Locale} />
-      </header>
+      <SiteHeader locale={locale as Locale} nav={data.nav} />
 
       <main>
         <section className="container hero">
