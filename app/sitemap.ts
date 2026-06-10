@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
-const baseUrl = "https://example.com";
+const baseUrl = "https://www.pilates-yuliya.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

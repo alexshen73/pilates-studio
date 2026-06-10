@@ -16,9 +16,9 @@ const bodyFont = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://www.pilates-yuliya.com"),
   title: {
-    default: "Online Pilates Landing",
+    default: "Pilates Studio | Yuliia Shendryk",
     template: "%s | Pilates",
   },
   description: "Bilingual online pilates sessions with a certified trainer.",
