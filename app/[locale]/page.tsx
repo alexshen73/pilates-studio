@@ -187,7 +187,6 @@ export default async function LocalePage({ params }: LocalePageProps) {
             </div>
             <p className="profileTag">Expert</p>
             <h3>{trainerName}</h3>
-            <p>{data.trainer.photoNote}</p>
           </article>
         </section>
 
