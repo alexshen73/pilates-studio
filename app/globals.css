@@ -674,7 +674,7 @@ h1 {
 .visualBlock {
   position: relative;
   overflow: hidden;
-  border: 1px dashed rgba(75, 111, 153, 0.34);
+  border: 1px solid rgba(75, 111, 153, 0.34);
   border-radius: 1rem;
   min-height: 160px;
   background: linear-gradient(160deg, #fcfdff, #e8eef8);
@@ -692,7 +692,7 @@ h1 {
 }
 
 .profileCard {
-  border: 1px dashed rgba(75, 111, 153, 0.34);
+  border: 1px solid rgba(75, 111, 153, 0.34);
   border-radius: 1rem;
   padding: 1rem;
   background: linear-gradient(145deg, #fcfdff, #e9eef8);
