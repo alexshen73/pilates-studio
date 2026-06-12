@@ -90,7 +90,7 @@ export const content: Record<Locale, LandingContent> = {
       title: "Баланс, сила та гнучкість у зручному для вас форматі",
       subtitle:
         "Працюємо онлайн, індивідуально та в малих групах — українською й англійською, для початківців і тих, хто повертається до активності.",
-      primaryCta: "Записатися на пробне заняття",
+      primaryCta: "Отримати персональну пропозицію",
       secondaryCta: "Дивитися YouTube",
       stats: [
         { label: "Формат", value: "1:1 та групи" },
@@ -268,7 +268,7 @@ export const content: Record<Locale, LandingContent> = {
       title: "Build balance, strength, and mobility in a format that fits you",
       subtitle:
         "Train online, privately, or in small groups - in Ukrainian and English, for beginners and those returning to movement.",
-      primaryCta: "Book a Trial Session",
+      primaryCta: "Get a Personal Offer",
       secondaryCta: "Watch on YouTube",
       stats: [
         { label: "Format", value: "1:1 and groups" },

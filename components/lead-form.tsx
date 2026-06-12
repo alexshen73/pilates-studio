@@ -27,8 +27,8 @@ const formatOptions = {
 
 const formCopy = {
   uk: {
-    title: "Запис на пробне заняття",
-    description: "Залиште контакти, і ми узгодимо зручний формат та час.",
+    title: "Підберемо зручний формат занять для вас",
+    description: "Залиште контакти, і ми допоможемо підібрати формат та узгодити час",
     nameLabel: "Ім'я",
     namePlaceholder: "Ваше ім'я",
     phoneLabel: "Телефон",
@@ -48,8 +48,8 @@ const formCopy = {
     invalidEmail: "Вкажіть коректний email.",
   },
   en: {
-    title: "Book a Trial Session",
-    description: "Leave your contact details, and we will arrange a comfortable format and time.",
+    title: "We will help you choose the right training format",
+    description: "Leave your contact details, and we will help choose the format and arrange the time.",
     nameLabel: "Name",
     namePlaceholder: "Your name",
     phoneLabel: "Phone",
