@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -9,6 +10,40 @@ import { isLocale, type Locale } from "@/lib/i18n";
 type BlogPageProps = {
   params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (!isLocale(locale)) {
+    return {};
+  }
+
+  const data = content[locale as Locale];
+  const title = locale === "uk" ? "Блог" : "Blog";
+  const description =
+    data.blog.description ||
+    (locale === "uk"
+      ? "Статті про пілатес, м'яке повернення до руху та здоров'я спини."
+      : "Articles about pilates, a gentle return to movement, and back health.");
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/${locale}/blog`,
+      languages: {
+        uk: "/uk/blog",
+        en: "/en/blog",
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      url: `/${locale}/blog`,
+    },
+  };
+}
 
 export default async function BlogPage({ params }: BlogPageProps) {
   const { locale } = await params;

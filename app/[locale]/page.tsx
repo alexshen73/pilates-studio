@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -23,6 +24,34 @@ const contactsData = {
   phone: "tel:+380972813267",
   phoneLabel: "+380 97 281 32 67",
 };
+
+export async function generateMetadata({ params }: LocalePageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (!isLocale(locale)) {
+    return {};
+  }
+
+  const data = content[locale as Locale];
+
+  return {
+    title: data.pageTitle,
+    description: data.pageDescription,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        uk: "/uk",
+        en: "/en",
+      },
+    },
+    openGraph: {
+      title: data.pageTitle,
+      description: data.pageDescription,
+      type: "website",
+      url: `/${locale}`,
+    },
+  };
+}
 
 export default async function LocalePage({ params }: LocalePageProps) {
   const { locale } = await params;

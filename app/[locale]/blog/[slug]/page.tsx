@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -17,6 +18,49 @@ export async function generateStaticParams() {
       slug: post.slug,
     })),
   );
+}
+
+export async function generateMetadata({ params }: BlogArticlePageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+
+  if (!isLocale(locale)) {
+    return {};
+  }
+
+  const localePosts = content[locale as Locale].blog.posts;
+  const postIndex = localePosts.findIndex((item) => item.slug === slug);
+
+  if (postIndex === -1) {
+    return {};
+  }
+
+  const post = localePosts[postIndex];
+  const alternateLocale = locale === "uk" ? "en" : "uk";
+  const alternatePost = content[alternateLocale].blog.posts[postIndex];
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: {
+      canonical: `/${locale}/blog/${post.slug}`,
+      languages: {
+        uk:
+          locale === "uk"
+            ? `/uk/blog/${post.slug}`
+            : `/uk/blog/${alternatePost?.slug ?? ""}`,
+        en:
+          locale === "en"
+            ? `/en/blog/${post.slug}`
+            : `/en/blog/${alternatePost?.slug ?? ""}`,
+      },
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      url: `/${locale}/blog/${post.slug}`,
+    },
+  };
 }
 
 export default async function BlogArticlePage({ params }: BlogArticlePageProps) {

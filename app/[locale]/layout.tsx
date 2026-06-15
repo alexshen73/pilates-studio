@@ -23,21 +23,12 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
   const data = content[locale as Locale];
 
   return {
-    title: data.pageTitle,
-    description: data.pageDescription,
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        uk: "/uk",
-        en: "/en",
-      },
+    title: {
+      default: data.pageTitle,
+      template: "%s | Pilates",
     },
     openGraph: {
-      title: data.pageTitle,
-      description: data.pageDescription,
       locale,
-      type: "website",
-      url: `/${locale}`,
     },
   };
 }
