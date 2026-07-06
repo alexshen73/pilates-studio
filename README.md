@@ -25,16 +25,11 @@ TELEGRAM_CHAT_ID=your_group_or_private_chat_id
 
 On Vercel, add the same variables in `Settings` -> `Environment Variables`, then redeploy.
 
-## Replace before launch
-- In `app/layout.tsx`, set `metadataBase` to your production domain.
-- In `app/sitemap.ts` and `app/robots.ts`, replace `https://example.com`.
-- In `app/[locale]/page.tsx`, set real links:
-  - Instagram
-  - Tik-Tok
-  - YouTube
-  - Telegram
-  - Email
-  - Phone
+## Production values
+Currently pointing at `https://www.pilates-yuliya.com`. To change domain or contact links:
+- `app/layout.tsx` — `metadataBase`.
+- `app/sitemap.ts` and `app/robots.ts` — `baseUrl`.
+- Contacts (Instagram, Tik-Tok, YouTube, Telegram, email, phone) — contact data used by `app/[locale]/page.tsx`.
 
 ## Deploy (Private GitHub + Vercel)
 1. Create a private GitHub repository.
@@ -46,6 +41,7 @@ On Vercel, add the same variables in `Settings` -> `Environment Variables`, then
 ## GitHub Pages Preview
 - A workflow is included at `.github/workflows/pages-preview.yml`.
 - Push your changes to branch `main` to publish a static preview on GitHub Pages.
+- The build runs with `GITHUB_PAGES=true`, which switches Next.js to `output: "export"` (see `next.config.*`). This is a static export, so server-side features like the Telegram lead form API route won't work in this preview.
 - In repository settings:
   1. Open `Settings` -> `Pages`.
   2. Set `Source` to `GitHub Actions`.
@@ -55,3 +51,5 @@ On Vercel, add the same variables in `Settings` -> `Environment Variables`, then
 ## Language routes
 - Ukrainian: `/uk`
 - English: `/en`
+
+Each locale also has a blog at `/uk/blog` and `/en/blog`.
