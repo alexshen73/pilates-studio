@@ -90,6 +90,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
     author: {
       "@type": "Person",
       name: locale === "uk" ? "Юлія Шендрик" : "Yuliia Shendryk",
+      url: `https://www.pilates-yuliya.com/${locale}#trainer`,
     },
   };
 

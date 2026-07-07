@@ -181,7 +181,7 @@ export const content: Record<Locale, LandingContent> = {
           slug: "pilates-pry-bolyu-v-spyni-yak-pochaty-bezpechno",
           title: "Пілатес при болю в спині: як почати безпечно",
           excerpt: "Що робити, якщо спина болить щодня: базові принципи, яких вправ уникати на старті, та як підібрати м’яке навантаження без загострень.",
-          publishedDate: "2026-05-18",
+          publishedDate: "2026-05-18T09:00:00+03:00",
           content: [
             "Біль у спині не завжди означає, що рух заборонений. Часто навпаки: правильно підібрана активність допомагає зменшити напруження, повернути мобільність і поступово відновити комфорт у повсякденних рухах.",
             "Починати варто зі спокійного темпу та короткої оцінки стану: де саме відчувається дискомфорт, які рухи його провокують, як тіло реагує на навантаження. На цьому етапі важливо не гнатися за амплітудою, а відновлювати контроль руху та стабільність корпусу.",
@@ -194,7 +194,7 @@ export const content: Record<Locale, LandingContent> = {
           slug: "pilates-pislya-perervy-myake-povernennya-u-formu",
           title: "Пілатес після перерви: м’яке повернення у форму",
           excerpt: "Покроковий план на перші 4 тижні: як повернути тонус, витривалість і впевненість у русі без стресу для тіла.",
-          publishedDate: "2026-05-25",
+          publishedDate: "2026-05-25T09:00:00+03:00",
           content: [
             "Після довгої паузи найгірша стратегія - одразу повертатися до звичного навантаження. Тілу потрібен час, щоб знову відчути опору, ритм і координацію, тому в пілатесі ми повертаємо форму поступово.",
             "Перший тиждень - адаптація: короткі заняття 15-20 хвилин, базові вправи, дихання й м’яка мобілізація. Головна ціль - повернути відчуття тіла та зняти напруження після сидячого дня.",
@@ -207,7 +207,7 @@ export const content: Record<Locale, LandingContent> = {
           slug: "15-hvylyn-pilatesu-dlya-ofisnoyi-spyny",
           title: "15 хвилин пілатесу для офісної спини",
           excerpt: "Короткий комплекс для шиї, плечей і попереку, який легко вбудувати в робочий день, щоб зменшити затиски та втому.",
-          publishedDate: "2026-06-01",
+          publishedDate: "2026-06-01T09:00:00+03:00",
           content: [
             "Якщо ви багато працюєте сидячи, тіло накопичує напруження в шиї, грудному відділі та попереку. Хороша новина: навіть 15 хвилин усвідомленого руху можуть відчутно змінити самопочуття вже в той самий день.",
             "Міні-комплекс можна побудувати так: 3-4 хвилини дихання та мобілізації грудного відділу, 5-6 хвилин на активацію центру тіла і сідниць, ще 4-5 хвилин на м’яке розвантаження шиї та попереку.",
@@ -369,7 +369,7 @@ export const content: Record<Locale, LandingContent> = {
           slug: "pilates-for-back-pain-how-to-start-safely",
           title: "Pilates for Back Pain: How to Start Safely",
           excerpt: "What to do if your back hurts daily: core principles, which exercises to avoid at the beginning, and how to choose gentle loads without flare-ups.",
-          publishedDate: "2026-05-18",
+          publishedDate: "2026-05-18T09:00:00+03:00",
           content: [
             "Back pain does not always mean movement is off-limits. In many cases, the right kind of movement helps reduce tension, restore mobility, and gradually improve comfort in daily life.",
             "A safe start begins with a quick assessment: where discomfort appears, which movements trigger symptoms, and how your body responds to load. At this stage, the goal is not range or intensity - it is control and stability.",
@@ -382,7 +382,7 @@ export const content: Record<Locale, LandingContent> = {
           slug: "pilates-after-a-break-a-gentle-return-to-shape",
           title: "Pilates After a Break: A Gentle Return to Shape",
           excerpt: "A step-by-step plan for the first 4 weeks to rebuild tone, endurance, and confidence in movement without stressing your body.",
-          publishedDate: "2026-05-25",
+          publishedDate: "2026-05-25T09:00:00+03:00",
           content: [
             "After a long break, jumping straight back into your old routine is usually the fastest way to overload your body. Pilates works better with a gradual return that rebuilds control, strength, and confidence.",
             "Week one is adaptation: short 15-20 minute sessions, basic movements, breathing, and mobility. The aim is to reconnect with your body and release accumulated tension.",
@@ -395,7 +395,7 @@ export const content: Record<Locale, LandingContent> = {
           slug: "15-minutes-of-pilates-for-desk-related-back-tension",
           title: "15 Minutes of Pilates for Desk-Related Back Tension",
           excerpt: "A short routine for your neck, shoulders, and lower back that fits into a workday and helps reduce stiffness and fatigue.",
-          publishedDate: "2026-06-01",
+          publishedDate: "2026-06-01T09:00:00+03:00",
           content: [
             "If you spend most of your day sitting, tension tends to build up in your neck, upper back, and lower back. The good news is that even 15 minutes of mindful movement can noticeably improve how you feel.",
             "A simple sequence can look like this: 3-4 minutes of breathing and thoracic mobility, 5-6 minutes of core and glute activation, then 4-5 minutes of gentle release for neck and lower back.",

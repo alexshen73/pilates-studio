@@ -71,6 +71,8 @@ export default async function LocalePage({ params }: LocalePageProps) {
     description: data.pageDescription,
     sameAs: [contactsData.youtube, contactsData.telegram],
     inLanguage: locale,
+    telephone: "+380972813267",
+    image: "https://www.pilates-yuliya.com/photos/hero.webp",
   };
 
   const faqSchema = {
