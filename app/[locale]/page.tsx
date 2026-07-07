@@ -73,6 +73,19 @@ export default async function LocalePage({ params }: LocalePageProps) {
     inLanguage: locale,
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <div className="pageShell theme-calm" id="top">
       <div className="bgShape bgShapeOne" aria-hidden />
@@ -348,6 +361,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
       <footer className="container footer">(c) {currentYear} {data.footer}</footer>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     </div>
   );
 }

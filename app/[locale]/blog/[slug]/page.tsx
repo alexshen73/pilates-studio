@@ -77,6 +77,22 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
     notFound();
   }
 
+  const previewImage = blogPreviewImages[post.slug];
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedDate,
+    inLanguage: locale,
+    ...(previewImage ? { image: `https://www.pilates-yuliya.com${previewImage}` } : {}),
+    author: {
+      "@type": "Person",
+      name: locale === "uk" ? "Юлія Шендрик" : "Yuliia Shendryk",
+    },
+  };
+
   return (
     <main className="container" style={{ paddingTop: "6rem", paddingBottom: "2rem" }}>
       <Link href={`/${locale}/blog`} className="btn btnGhost">
@@ -107,6 +123,8 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
           ))}
         </div>
       </article>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </main>
   );
 }

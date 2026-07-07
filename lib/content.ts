@@ -35,7 +35,6 @@ export type LandingContent = {
   trainer: {
     title: string;
     description: string;
-    photoNote: string;
     credentials: string[];
   };
   testimonials: {
@@ -49,7 +48,7 @@ export type LandingContent = {
   blog: {
     title: string;
     description: string;
-    posts: Array<{ slug: string; title: string; excerpt: string; content: string[] }>;
+    posts: Array<{ slug: string; title: string; excerpt: string; publishedDate: string; content: string[] }>;
     cta: string;
   };
   faq: {
@@ -131,7 +130,6 @@ export const content: Record<Locale, LandingContent> = {
       title: "Про тренера",
       description:
         "Мій шлях у пілатес почався не з професії, а з особистої потреби відновитися після насичених учительських буднів. Спочатку це було хобі, яке допомагало зняти напруження, повернути енергію та відчути тіло по-новому. З часом я побачила, наскільки глибоко пілатес змінює самопочуття, поставу й якість життя, і вирішила перейти на професійний рівень. Я пройшла сертифіковане навчання, здобула необхідні знання та практику і сьогодні допомагаю іншим рухатися безпечно, усвідомлено й з результатом.",
-      photoNote: "Фото тренера додамо після підбору фінальних візуалів.",
       credentials: [
         "Міжнародна сертифікація з пілатесу",
         "Досвід роботи з групами та індивідуальними клієнтами",
@@ -177,12 +175,13 @@ export const content: Record<Locale, LandingContent> = {
     },
     blog: {
       title: "Блог",
-      description: "",
+      description: "Практичні поради з пілатесу: як почати безпечно, що робити при болю в спині та як зберігати форму у щоденному ритмі.",
       posts: [
         {
           slug: "pilates-pry-bolyu-v-spyni-yak-pochaty-bezpechno",
           title: "Пілатес при болю в спині: як почати безпечно",
           excerpt: "Що робити, якщо спина болить щодня: базові принципи, яких вправ уникати на старті, та як підібрати м’яке навантаження без загострень.",
+          publishedDate: "2026-05-18",
           content: [
             "Біль у спині не завжди означає, що рух заборонений. Часто навпаки: правильно підібрана активність допомагає зменшити напруження, повернути мобільність і поступово відновити комфорт у повсякденних рухах.",
             "Починати варто зі спокійного темпу та короткої оцінки стану: де саме відчувається дискомфорт, які рухи його провокують, як тіло реагує на навантаження. На цьому етапі важливо не гнатися за амплітудою, а відновлювати контроль руху та стабільність корпусу.",
@@ -195,6 +194,7 @@ export const content: Record<Locale, LandingContent> = {
           slug: "pilates-pislya-perervy-myake-povernennya-u-formu",
           title: "Пілатес після перерви: м’яке повернення у форму",
           excerpt: "Покроковий план на перші 4 тижні: як повернути тонус, витривалість і впевненість у русі без стресу для тіла.",
+          publishedDate: "2026-05-25",
           content: [
             "Після довгої паузи найгірша стратегія - одразу повертатися до звичного навантаження. Тілу потрібен час, щоб знову відчути опору, ритм і координацію, тому в пілатесі ми повертаємо форму поступово.",
             "Перший тиждень - адаптація: короткі заняття 15-20 хвилин, базові вправи, дихання й м’яка мобілізація. Головна ціль - повернути відчуття тіла та зняти напруження після сидячого дня.",
@@ -207,6 +207,7 @@ export const content: Record<Locale, LandingContent> = {
           slug: "15-hvylyn-pilatesu-dlya-ofisnoyi-spyny",
           title: "15 хвилин пілатесу для офісної спини",
           excerpt: "Короткий комплекс для шиї, плечей і попереку, який легко вбудувати в робочий день, щоб зменшити затиски та втому.",
+          publishedDate: "2026-06-01",
           content: [
             "Якщо ви багато працюєте сидячи, тіло накопичує напруження в шиї, грудному відділі та попереку. Хороша новина: навіть 15 хвилин усвідомленого руху можуть відчутно змінити самопочуття вже в той самий день.",
             "Міні-комплекс можна побудувати так: 3-4 хвилини дихання та мобілізації грудного відділу, 5-6 хвилин на активацію центру тіла і сідниць, ще 4-5 хвилин на м’яке розвантаження шиї та попереку.",
@@ -232,6 +233,14 @@ export const content: Record<Locale, LandingContent> = {
         {
           q: "Чи можна займатися при болях у спині?",
           a: "У більшості випадків так, але лише після короткої первинної оцінки стану. На старті тренер уточнює ваші симптоми, рівень болю, обмеження в рухах і попередній досвід занять, щоб підібрати безпечний формат навантаження. Програма будується м’яко: з акцентом на стабілізацію, дихання, мобільність і контроль техніки без різких або провокуючих рухів. У процесі заняття адаптуються під самопочуття, а навантаження підвищується поступово, щоб зменшити дискомфорт і повернути впевненість у русі.",
+        },
+        {
+          q: "Скільки коштує заняття і чи є пробне?",
+          a: "Вартість залежить від формату — індивідуальні заняття, малі групи чи відеоуроки. Напишіть у Telegram або залиште заявку через форму на сайті — тренер надішле актуальні тарифи та підбере оптимальний варіант під ваш запит.",
+        },
+        {
+          q: "Чи можна скасувати або перенести заняття?",
+          a: "Так, попередьте тренера заздалегідь через Telegram, і заняття буде перенесено на зручний час.",
         },
       ],
     },
@@ -309,7 +318,6 @@ export const content: Record<Locale, LandingContent> = {
       title: "About the Coach",
       description:
         "My journey into Pilates started not as a profession, but as a personal need to recover after intense school-teaching days. At first, it was a hobby that helped me release tension, restore energy, and reconnect with my body. Over time, I saw how deeply Pilates can transform well-being, posture, and overall quality of life, and I decided to take it to the next level. I completed certified training, gained the necessary knowledge and practical experience, and today I help others move safely, mindfully, and with real results.",
-      photoNote: "Coach photos can be added after final visual selection.",
       credentials: [
         "International pilates certification",
         "Experience with group classes and private clients",
@@ -355,12 +363,13 @@ export const content: Record<Locale, LandingContent> = {
     },
     blog: {
       title: "Blog",
-      description: "",
+      description: "Practical pilates guidance: how to start safely, what to do about back pain, and how to stay consistent in a busy schedule.",
       posts: [
         {
           slug: "pilates-for-back-pain-how-to-start-safely",
           title: "Pilates for Back Pain: How to Start Safely",
           excerpt: "What to do if your back hurts daily: core principles, which exercises to avoid at the beginning, and how to choose gentle loads without flare-ups.",
+          publishedDate: "2026-05-18",
           content: [
             "Back pain does not always mean movement is off-limits. In many cases, the right kind of movement helps reduce tension, restore mobility, and gradually improve comfort in daily life.",
             "A safe start begins with a quick assessment: where discomfort appears, which movements trigger symptoms, and how your body responds to load. At this stage, the goal is not range or intensity - it is control and stability.",
@@ -373,6 +382,7 @@ export const content: Record<Locale, LandingContent> = {
           slug: "pilates-after-a-break-a-gentle-return-to-shape",
           title: "Pilates After a Break: A Gentle Return to Shape",
           excerpt: "A step-by-step plan for the first 4 weeks to rebuild tone, endurance, and confidence in movement without stressing your body.",
+          publishedDate: "2026-05-25",
           content: [
             "After a long break, jumping straight back into your old routine is usually the fastest way to overload your body. Pilates works better with a gradual return that rebuilds control, strength, and confidence.",
             "Week one is adaptation: short 15-20 minute sessions, basic movements, breathing, and mobility. The aim is to reconnect with your body and release accumulated tension.",
@@ -385,6 +395,7 @@ export const content: Record<Locale, LandingContent> = {
           slug: "15-minutes-of-pilates-for-desk-related-back-tension",
           title: "15 Minutes of Pilates for Desk-Related Back Tension",
           excerpt: "A short routine for your neck, shoulders, and lower back that fits into a workday and helps reduce stiffness and fatigue.",
+          publishedDate: "2026-06-01",
           content: [
             "If you spend most of your day sitting, tension tends to build up in your neck, upper back, and lower back. The good news is that even 15 minutes of mindful movement can noticeably improve how you feel.",
             "A simple sequence can look like this: 3-4 minutes of breathing and thoracic mobility, 5-6 minutes of core and glute activation, then 4-5 minutes of gentle release for neck and lower back.",
@@ -410,6 +421,14 @@ export const content: Record<Locale, LandingContent> = {
         {
           q: "Can I train if I have back pain?",
           a: "In most cases, yes - but only after a short initial assessment. At the start, the coach clarifies your symptoms, pain level, movement limitations, and previous training experience to choose a safe training format. The program is built gently, with a focus on stabilization, breathing, mobility, and technique control without sharp or provocative movements. Sessions are adapted to how you feel, and the load increases gradually to reduce discomfort and restore confidence in movement.",
+        },
+        {
+          q: "How much does a session cost, and is there a trial?",
+          a: "Pricing depends on the format - private sessions, small groups, or video lessons. Message on Telegram or submit the site form and the coach will share current rates and help you pick the best option for your goals.",
+        },
+        {
+          q: "Can I cancel or reschedule a session?",
+          a: "Yes, just let the coach know in advance via Telegram and the session will be moved to a time that works for you.",
         },
       ],
     },
