@@ -5,4 +5,12 @@ export const blogPreviewImages: Record<string, string> = {
   "pilates-after-a-break-a-gentle-return-to-shape": "/photos/back-to-fit.webp",
   "15-hvylyn-pilatesu-dlya-ofisnoyi-spyny": "/photos/office-back.webp",
   "15-minutes-of-pilates-for-desk-related-back-tension": "/photos/office-back.webp",
+  "pilates-dlya-skhudnennya-chy-spravdi-vin-pratsyuye": "/photos/pilates-weight-loss.webp",
+  "pilates-for-weight-loss-does-it-really-work": "/photos/pilates-weight-loss.webp",
+  "pilates-chy-yoga-u-chomu-riznytsya-i-shcho-obraty": "/photos/pilates-vs-yoga.webp",
+  "pilates-vs-yoga-whats-the-difference-and-which-to-choose": "/photos/pilates-vs-yoga.webp",
+  "skilky-chasu-potribno-shchob-pobachyty-rezultat-vid-pilatesu": "/photos/pilates-results-timeline.webp",
+  "how-long-until-you-see-results-from-pilates": "/photos/pilates-results-timeline.webp",
+  "pilates-i-postava-yak-prybraty-sutulist-bez-bolyu": "/photos/pilates-posture.webp",
+  "pilates-and-posture-how-to-fix-rounded-shoulders-without-pain": "/photos/pilates-posture.webp",
 };

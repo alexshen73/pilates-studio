@@ -288,7 +288,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
           <h2>{data.blog.title}</h2>
           <p>{data.blog.description}</p>
           <div className="programGrid">
-            {data.blog.posts.map((post) => (
+            {data.blog.posts.slice(0, 3).map((post) => (
               <article key={post.title} className="programCard">
                 <h3>{post.title}</h3>
                 <p>{post.excerpt}</p>
