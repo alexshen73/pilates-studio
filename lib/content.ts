@@ -1,5 +1,9 @@
 import type { Locale } from "@/lib/i18n";
 
+// Тимчасовий вимикач секції «Тарифи»: поставити true ПІСЛЯ міграції з Vercel
+// Hobby (його ToS забороняє комерцію). Дані груп нижче вже заповнені.
+export const pricingEnabled = false;
+
 export type LandingContent = {
   localeName: string;
   pageTitle: string;

@@ -8,7 +8,7 @@ import { HeroMedia } from "@/components/hero-media";
 import { LeadForm } from "@/components/lead-form";
 import { SiteHeader } from "@/components/site-header";
 import { ScrollTopButton } from "@/components/scroll-top-button";
-import { content } from "@/lib/content";
+import { content, pricingEnabled } from "@/lib/content";
 import { isLocale, type Locale } from "@/lib/i18n";
 
 type LocalePageProps = {
@@ -98,7 +98,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
         locale={locale as Locale}
         nav={data.nav}
         ctaLabel={data.pricing.cta}
-        hasPricing={data.pricing.groups.length > 0}
+        hasPricing={pricingEnabled && data.pricing.groups.length > 0}
       />
 
       <main>
@@ -285,7 +285,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
           </div>
         </section>
 
-        {data.pricing.groups.length > 0 ? (
+        {pricingEnabled && data.pricing.groups.length > 0 ? (
           <section id="pricing" className="container section block">
             <h2>{data.pricing.title}</h2>
             <p>{data.pricing.description}</p>
