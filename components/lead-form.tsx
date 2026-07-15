@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 import type { Locale } from "@/lib/i18n";
 import { isValidEmail, isValidPhone, normalizeContact } from "@/lib/lead-validation";
@@ -8,6 +9,7 @@ import { isValidEmail, isValidPhone, normalizeContact } from "@/lib/lead-validat
 type LeadFormProps = {
   locale: Locale;
   ctaLabel: string;
+  ctaClassName?: string;
 };
 
 type SubmitStatus = "idle" | "sending" | "success" | "error";
@@ -70,7 +72,7 @@ const formCopy = {
   },
 } as const;
 
-export function LeadForm({ locale, ctaLabel }: LeadFormProps) {
+export function LeadForm({ locale, ctaLabel, ctaClassName = "btn btnAccent" }: LeadFormProps) {
   const copy = formCopy[locale];
   const options = formatOptions[locale];
   const firstFieldRef = useRef<HTMLInputElement>(null);
@@ -194,11 +196,13 @@ export function LeadForm({ locale, ctaLabel }: LeadFormProps) {
 
   return (
     <>
-      <button type="button" className="btn btnPrimary" onClick={openModal}>
+      <button type="button" className={ctaClassName} onClick={openModal}>
         {ctaLabel}
       </button>
 
-      {isOpen ? (
+      {/* Портал: хедер має backdrop-filter, який стає containing block для
+          position:fixed — без порталу оверлей центрується відносно хедера */}
+      {isOpen ? createPortal(
         <div className="leadOverlay" onMouseDown={closeModal}>
           <div
             className="leadModal"
@@ -297,7 +301,8 @@ export function LeadForm({ locale, ctaLabel }: LeadFormProps) {
               </form>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       ) : null}
     </>
   );

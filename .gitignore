@@ -11,4 +11,5 @@ tsconfig.tsbuildinfo
 .env*
 !.env.example
 .DS_Store
+todo.txt
 

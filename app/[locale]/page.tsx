@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ContactIcon } from "@/components/contact-icon";
+import { HeroMedia } from "@/components/hero-media";
 import { LeadForm } from "@/components/lead-form";
 import { SiteHeader } from "@/components/site-header";
 import { ScrollTopButton } from "@/components/scroll-top-button";
@@ -93,7 +94,12 @@ export default async function LocalePage({ params }: LocalePageProps) {
       <div className="bgShape bgShapeOne" aria-hidden />
       <div className="bgShape bgShapeTwo" aria-hidden />
 
-      <SiteHeader locale={locale as Locale} nav={data.nav} />
+      <SiteHeader
+        locale={locale as Locale}
+        nav={data.nav}
+        ctaLabel={data.pricing.cta}
+        hasPricing={data.pricing.groups.length > 0}
+      />
 
       <main>
         <section className="container hero">
@@ -112,14 +118,9 @@ export default async function LocalePage({ params }: LocalePageProps) {
             </div>
 
             <div className="heroVisual">
-              <Image
-                src="/photos/hero.webp"
-                alt={locale === "uk" ? "Тренування з пілатесу" : "Pilates training session"}
-                fill
-                priority
-                unoptimized
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="heroVisualImage"
+              <HeroMedia
+                imageSrc="/photos/hero.webp"
+                imageAlt={locale === "uk" ? "Тренування з пілатесу" : "Pilates training session"}
               />
             </div>
           </div>
@@ -283,6 +284,31 @@ export default async function LocalePage({ params }: LocalePageProps) {
             ))}
           </div>
         </section>
+
+        {data.pricing.groups.length > 0 ? (
+          <section id="pricing" className="container section block">
+            <h2>{data.pricing.title}</h2>
+            <p>{data.pricing.description}</p>
+            <div className="pricingGrid">
+              {data.pricing.groups.map((group) => (
+                <article key={group.name} className="pricingCard">
+                  <h3>{group.name}</h3>
+                  <p className="pricingGroupDesc">{group.description}</p>
+                  <ul className="pricingItems">
+                    {group.items.map((item) => (
+                      <li key={item.name} className="pricingItem">
+                        <span>{item.name}</span>
+                        <strong>{item.price}</strong>
+                      </li>
+                    ))}
+                  </ul>
+                  <LeadForm locale={locale as Locale} ctaLabel={data.pricing.cta} ctaClassName="btn btnPrimary" />
+                </article>
+              ))}
+            </div>
+            <p className="pricingNote">{data.pricing.note}</p>
+          </section>
+        ) : null}
 
         <section id="blog" className="container section block">
           <h2>{data.blog.title}</h2>

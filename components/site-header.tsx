@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 import { LanguageSwitch } from "@/components/language-switch";
+import { LeadForm } from "@/components/lead-form";
 import type { Locale } from "@/lib/i18n";
 
 type SiteHeaderProps = {
@@ -14,25 +16,30 @@ type SiteHeaderProps = {
     trainer: string;
     testimonials: string;
     formats: string;
+    pricing: string;
     blog: string;
     faq: string;
     contacts: string;
   };
+  ctaLabel: string;
+  hasPricing?: boolean;
 };
 
-const navItems = [
+const allNavItems = [
   { key: "about", href: "#about" },
   { key: "whoFor", href: "#who-for" },
   { key: "trainer", href: "#trainer" },
   { key: "testimonials", href: "#testimonials" },
   { key: "formats", href: "#formats" },
+  { key: "pricing", href: "#pricing" },
   { key: "blog", href: "#blog" },
   { key: "faq", href: "#faq" },
   { key: "contacts", href: "#contacts" },
 ] as const;
 
-export function SiteHeader({ locale, nav }: SiteHeaderProps) {
+export function SiteHeader({ locale, nav, ctaLabel, hasPricing = false }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navItems = allNavItems.filter((item) => item.key !== "pricing" || hasPricing);
 
   useEffect(() => {
     if (!isMenuOpen) {
@@ -85,9 +92,16 @@ export function SiteHeader({ locale, nav }: SiteHeaderProps) {
         ))}
       </nav>
 
-      <LanguageSwitch locale={locale} />
+      <div className="headerActions">
+        <span className="headerCta">
+          <LeadForm locale={locale} ctaLabel={ctaLabel} ctaClassName="btn btnAccent btnCompact" />
+        </span>
+        <LanguageSwitch locale={locale} />
+      </div>
 
-      {isMenuOpen ? (
+      {/* Портал: backdrop-filter хедера робить його containing block для
+          position:fixed, тому оверлей рендеримо в document.body */}
+      {isMenuOpen ? createPortal(
         <div className="mobileNavOverlay" onClick={() => setIsMenuOpen(false)}>
           <div
             id="mobile-navigation"
@@ -117,7 +131,8 @@ export function SiteHeader({ locale, nav }: SiteHeaderProps) {
               ))}
             </nav>
           </div>
-        </div>
+        </div>,
+        document.body
       ) : null}
     </header>
   );
