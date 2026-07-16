@@ -18,3 +18,7 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 
+// Дає `next dev` доступ до Cloudflare-біндингів (env тощо); під час build це no-op.
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+initOpenNextCloudflareForDev();
+

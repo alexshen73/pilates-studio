@@ -13,3 +13,8 @@ tsconfig.tsbuildinfo
 .DS_Store
 todo.txt
 
+# Cloudflare / OpenNext
+.open-next
+.wrangler
+.dev.vars
+

@@ -192,7 +192,7 @@ export const content: Record<Locale, LandingContent> = {
     },
     pricing: {
       title: "Тарифи",
-      description: "Прозорі ціни без прихованих умов. Перша консультація — безкоштовна: підберемо формат і складемо план під вашу мету.",
+      description: "Прозорі ціни без прихованих умов. Перша консультація — безкоштовна: підберемо формат і складемо план занять саме під вашу мету, рівень і графік.",
       note: "Для порівняння: групове заняття пілатесу в Європі коштує €15–30, індивідуальне — €50–80.",
       cta: "Записатися",
       groups: [
@@ -217,7 +217,7 @@ export const content: Record<Locale, LandingContent> = {
         },
         {
           name: "Онлайн-заняття наживо",
-          description: "Тренування з тренеркою в реальному часі, 45–50 хвилин.",
+          description: "Тренування з тренеркою в реальному часі, 1 година.",
           items: [
             { name: "Разове тренування", price: "25 €" },
             { name: "Абонемент на 8 тренувань · 2 рази на тиждень", price: "180 €" },
@@ -339,6 +339,10 @@ export const content: Record<Locale, LandingContent> = {
           a: "Так, пілатес добре підходить новачкам. На старті тренер проводить коротке тестування вашого рівня підготовки, мобільності та техніки руху, після чого складає індивідуальну програму саме під ваші цілі. Ми починаємо з базових і безпечних вправ та поступово ускладнюємо навантаження у комфортному для вас темпі.",
         },
         {
+          q: "Чи підходить пілатес для чоловіків?",
+          a: "Так, звісно. Пілатес створив чоловік — Джозеф Пілатес, і спочатку метод розроблявся саме для чоловіків. Заняття розвивають силу центру тіла, гнучкість і поставу, чудово доповнюють силові тренування та біг і допомагають розвантажити спину після сидячої роботи. Програма адаптується під ваш рівень.",
+        },
+        {
           q: "Що потрібно для онлайн-заняття?",
           a: "Килимок, стабільний інтернет та 1.5-2 м вільного простору.",
         },
@@ -348,7 +352,7 @@ export const content: Record<Locale, LandingContent> = {
         },
         {
           q: "Скільки коштує заняття і чи є пробне?",
-          a: "Вартість залежить від формату — індивідуальні заняття, малі групи чи відеоуроки. Напишіть у Telegram або залиште заявку через форму на сайті — тренер надішле актуальні тарифи та підбере оптимальний варіант під ваш запит.",
+          a: "Актуальні ціни на всі формати зібрані в секції «Тарифи» на цій сторінці: відеозаняття в записі, програма «10 тренувань» та онлайн-заняття наживо. Почати можна з безкоштовної консультації, а формат наживо — спробувати разовим заняттям без абонемента.",
         },
         {
           q: "Чи можна скасувати або перенести заняття?",
@@ -476,7 +480,7 @@ export const content: Record<Locale, LandingContent> = {
     },
     pricing: {
       title: "Pricing",
-      description: "Transparent prices with no hidden conditions. The first consultation is free: we will pick a format and build a plan for your goal.",
+      description: "Transparent prices with no hidden conditions. The first consultation is free: we will pick a format and build a training plan tailored to your goal, level and schedule.",
       note: "For comparison: a group pilates class in Europe costs €15–30, a private session €50–80.",
       cta: "Book now",
       groups: [
@@ -501,7 +505,7 @@ export const content: Record<Locale, LandingContent> = {
         },
         {
           name: "Live online sessions",
-          description: "Real-time sessions with the coach, 45–50 minutes.",
+          description: "Real-time sessions with the coach, 1 hour.",
           items: [
             { name: "Single session", price: "€25" },
             { name: "8-session pass · twice a week", price: "€180" },
@@ -623,6 +627,10 @@ export const content: Record<Locale, LandingContent> = {
           a: "Yes, absolutely. We start with a short assessment of your current level, mobility, and movement quality, then build a personalized program around your goals. You begin with safe fundamentals and progress step by step at a comfortable pace.",
         },
         {
+          q: "Is pilates suitable for men?",
+          a: "Yes, absolutely. Pilates was created by a man - Joseph Pilates - and the method was originally developed for men. Sessions build core strength, flexibility, and posture, complement strength training and running well, and help release back tension after desk work. The program is adapted to your level.",
+        },
+        {
           q: "What do I need for online classes?",
           a: "A mat, stable internet, and around 1.5-2 meters of free space.",
         },
@@ -632,7 +640,7 @@ export const content: Record<Locale, LandingContent> = {
         },
         {
           q: "How much does a session cost, and is there a trial?",
-          a: "Pricing depends on the format - private sessions, small groups, or video lessons. Message on Telegram or submit the site form and the coach will share current rates and help you pick the best option for your goals.",
+          a: "Current prices for all formats are listed in the Pricing section on this page: recorded video workouts, the \"10 workouts\" program, and live online sessions. You can start with a free consultation, and try the live format with a single drop-in class - no subscription needed.",
         },
         {
           q: "Can I cancel or reschedule a session?",
