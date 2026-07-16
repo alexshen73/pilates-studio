@@ -18,3 +18,7 @@ todo.txt
 .wrangler
 .dev.vars
 
+# Claude Code
+.claude/
+skills-lock.json
+
