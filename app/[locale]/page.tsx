@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { ContactIcon } from "@/components/contact-icon";
 import { HeroMedia } from "@/components/hero-media";
 import { LeadForm } from "@/components/lead-form";
+import { PricingSection } from "@/components/pricing-section";
 import { SiteHeader } from "@/components/site-header";
 import { ScrollTopButton } from "@/components/scroll-top-button";
 import { content, pricingEnabled } from "@/lib/content";
@@ -286,28 +287,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
         </section>
 
         {pricingEnabled && data.pricing.groups.length > 0 ? (
-          <section id="pricing" className="container section block">
-            <h2>{data.pricing.title}</h2>
-            <p>{data.pricing.description}</p>
-            <div className="pricingGrid">
-              {data.pricing.groups.map((group) => (
-                <article key={group.name} className="pricingCard">
-                  <h3>{group.name}</h3>
-                  <p className="pricingGroupDesc">{group.description}</p>
-                  <ul className="pricingItems">
-                    {group.items.map((item) => (
-                      <li key={item.name} className="pricingItem">
-                        <span>{item.name}</span>
-                        <strong>{item.price}</strong>
-                      </li>
-                    ))}
-                  </ul>
-                  <LeadForm locale={locale as Locale} ctaLabel={data.pricing.cta} ctaClassName="btn btnPrimary" />
-                </article>
-              ))}
-            </div>
-            <p className="pricingNote">{data.pricing.note}</p>
-          </section>
+          <PricingSection data={data.pricing} locale={locale as Locale} />
         ) : null}
 
         <section id="blog" className="container section block">

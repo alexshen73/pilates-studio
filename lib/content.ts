@@ -56,7 +56,7 @@ export type LandingContent = {
     groups: Array<{
       name: string;
       description: string;
-      items: Array<{ name: string; price: string }>;
+      items: Array<{ name: string; eur: string; uah: string }>;
     }>;
   };
   blog: {
@@ -191,34 +191,34 @@ export const content: Record<Locale, LandingContent> = {
     pricing: {
       title: "Тарифи",
       description: "Прозорі ціни без прихованих умов. Перша консультація — безкоштовна: підберемо формат і складемо план занять саме під вашу мету, рівень і графік.",
-      note: "Для порівняння: групове заняття пілатесу в Європі коштує €15–30, індивідуальне — €50–80.",
+      note: "",
       cta: "Записатися",
       groups: [
         {
           name: "Відеозаняття в записі",
           description: "Записані тренування по 45–50 хвилин на приватному YouTube — займайтеся, коли зручно.",
           items: [
-            { name: "1 тренування · доступ 1 тиждень", price: "20 €" },
-            { name: "3 тренування · доступ 2 тижні", price: "50 €" },
-            { name: "6 тренувань · доступ 1 місяць", price: "120 €" },
-            { name: "12 тренувань · доступ 2 місяці", price: "220 €" },
+            { name: "1 тренування · доступ 1 тиждень", eur: "20", uah: "1000" },
+            { name: "3 тренування · доступ 2 тижні", eur: "50", uah: "2000" },
+            { name: "6 тренувань · доступ 1 місяць", eur: "120", uah: "5000" },
+            { name: "12 тренувань · доступ 2 місяці", eur: "220", uah: "10000" },
           ],
         },
         {
           name: "Програма «10 тренувань»",
           description: "Готовий курс із 10 записаних тренувань — послідовна програма від простого до складного з підтримкою тренерки.",
           items: [
-            { name: "Стандарт · доступ 2 місяці + 1 консультація чи тренування", price: "200 €" },
-            { name: "Група · доступ 2 місяці + Telegram-канал", price: "250 €" },
-            { name: "VIP · доступ 3 місяці + корегування програми", price: "400 €" },
+            { name: "Стандарт · доступ 2 місяці + 1 консультація чи тренування", eur: "200", uah: "8000" },
+            { name: "Група · доступ 2 місяці, Telegram-канал зі зворотним зв'язком, консультації з харчування + 1 онлайн-тренування", eur: "250", uah: "10000" },
+            { name: "VIP · доступ 3 місяці + корегування програми", eur: "400", uah: "20000" },
           ],
         },
         {
           name: "Онлайн-заняття наживо",
-          description: "Тренування з тренеркою в реальному часі, 1 година.",
+          description: "Тренування з тренеркою в реальному часі, 1 година. Запис заняття залишається у вас.",
           items: [
-            { name: "Разове тренування", price: "25 €" },
-            { name: "Абонемент на 8 тренувань · 2 рази на тиждень", price: "180 €" },
+            { name: "Разове тренування", eur: "25", uah: "1000" },
+            { name: "Абонемент на 8 тренувань · 2 рази на тиждень", eur: "180", uah: "6400" },
           ],
         },
       ],
@@ -479,34 +479,34 @@ export const content: Record<Locale, LandingContent> = {
     pricing: {
       title: "Pricing",
       description: "Transparent prices with no hidden conditions. The first consultation is free: we will pick a format and build a training plan tailored to your goal, level and schedule.",
-      note: "For comparison: a group pilates class in Europe costs €15–30, a private session €50–80.",
+      note: "",
       cta: "Book now",
       groups: [
         {
           name: "Recorded video sessions",
           description: "45–50-minute recorded workouts on a private YouTube — train whenever it suits you.",
           items: [
-            { name: "1 workout · 1-week access", price: "€20" },
-            { name: "3 workouts · 2-week access", price: "€50" },
-            { name: "6 workouts · 1-month access", price: "€120" },
-            { name: "12 workouts · 2-month access", price: "€220" },
+            { name: "1 workout · 1-week access", eur: "20", uah: "1000" },
+            { name: "3 workouts · 2-week access", eur: "50", uah: "2000" },
+            { name: "6 workouts · 1-month access", eur: "120", uah: "5000" },
+            { name: "12 workouts · 2-month access", eur: "220", uah: "10000" },
           ],
         },
         {
           name: "The “10 Workouts” Program",
           description: "A structured course of 10 recorded workouts — a step-by-step program with the coach's support.",
           items: [
-            { name: "Standard · 2-month access + 1 consultation or session", price: "€200" },
-            { name: "Group · 2-month access + Telegram channel", price: "€250" },
-            { name: "VIP · 3-month access + program adjustments", price: "€400" },
+            { name: "Standard · 2-month access + 1 consultation or session", eur: "200", uah: "8000" },
+            { name: "Group · 2-month access, Telegram channel with feedback, nutrition guidance + 1 online session", eur: "250", uah: "10000" },
+            { name: "VIP · 3-month access + program adjustments", eur: "400", uah: "20000" },
           ],
         },
         {
           name: "Live online sessions",
-          description: "Real-time sessions with the coach, 1 hour.",
+          description: "Real-time sessions with the coach, 1 hour. The session recording stays yours.",
           items: [
-            { name: "Single session", price: "€25" },
-            { name: "8-session pass · twice a week", price: "€180" },
+            { name: "Single session", eur: "25", uah: "1000" },
+            { name: "8-session pass · twice a week", eur: "180", uah: "6400" },
           ],
         },
       ],
