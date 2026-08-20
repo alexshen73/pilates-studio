@@ -4,7 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { blogPreviewImages } from "@/lib/blog-images";
-import { content } from "@/lib/content";
+import { content, pricingEnabled } from "@/lib/content";
+import { SiteHeader } from "@/components/site-header";
 import { isLocale, locales, type Locale } from "@/lib/i18n";
 
 type BlogArticlePageProps = {
@@ -95,12 +96,20 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
   };
 
   return (
-    <main className="container" style={{ paddingTop: "6rem", paddingBottom: "2rem" }}>
-      <Link href={`/${locale}/blog`} className="btn btnGhost">
-        {locale === "uk" ? "До всіх статей" : "Back to all articles"}
-      </Link>
+    <div className="pageShell theme-calm">
+      <SiteHeader
+        locale={locale as Locale}
+        nav={data.nav}
+        ctaLabel={data.pricing.cta}
+        hasPricing={pricingEnabled && data.pricing.groups.length > 0}
+        sectionBase={`/${locale}`}
+      />
+      <main className="container" style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
+        <Link href={`/${locale}/blog`} className="btn btnGhost">
+          {locale === "uk" ? "До всіх статей" : "Back to all articles"}
+        </Link>
 
-      <article className="section block" style={{ marginTop: "1rem" }}>
+        <article className="section block" style={{ marginTop: "1rem" }}>
         <h1 className="blogTitle">{post.title}</h1>
         <p style={{ color: "var(--muted)" }}>{post.excerpt}</p>
         {blogPreviewImages[post.slug] ? (
@@ -125,7 +134,8 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
         </div>
       </article>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-    </main>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      </main>
+    </div>
   );
 }

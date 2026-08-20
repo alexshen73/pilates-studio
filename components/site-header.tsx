@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
@@ -23,6 +24,9 @@ type SiteHeaderProps = {
   };
   ctaLabel: string;
   hasPricing?: boolean;
+  // Префікс для якірних посилань секцій. Порожній на головній (#about),
+  // на вкладених сторінках (блог) — `/${locale}`, щоб вести на головну (/uk#about).
+  sectionBase?: string;
 };
 
 const allNavItems = [
@@ -37,7 +41,7 @@ const allNavItems = [
   { key: "contacts", href: "#contacts" },
 ] as const;
 
-export function SiteHeader({ locale, nav, ctaLabel, hasPricing = false }: SiteHeaderProps) {
+export function SiteHeader({ locale, nav, ctaLabel, hasPricing = false, sectionBase = "" }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = allNavItems.filter((item) => item.key !== "pricing" || hasPricing);
 
@@ -80,13 +84,21 @@ export function SiteHeader({ locale, nav, ctaLabel, hasPricing = false }: SiteHe
         </button>
 
         <Link href={`/${locale}`} className="brandMark">
-          <img src="../brand/logo-calm-a.svg" alt="Pilates Studio" className="brandLogo" />
+          <Image
+            src="/brand/logo-calm-a.svg"
+            alt="Pilates Studio"
+            width={220}
+            height={44}
+            className="brandLogo"
+            priority
+            unoptimized
+          />
         </Link>
       </div>
 
       <nav className="navList" aria-label="Primary">
         {navItems.map((item) => (
-          <a key={item.key} href={item.href}>
+          <a key={item.key} href={`${sectionBase}${item.href}`}>
             {nav[item.key]}
           </a>
         ))}
@@ -125,7 +137,7 @@ export function SiteHeader({ locale, nav, ctaLabel, hasPricing = false }: SiteHe
 
             <nav className="mobileNavList" aria-label="Mobile">
               {navItems.map((item) => (
-                <a key={item.key} href={item.href} onClick={() => setIsMenuOpen(false)}>
+                <a key={item.key} href={`${sectionBase}${item.href}`} onClick={() => setIsMenuOpen(false)}>
                   {nav[item.key]}
                 </a>
               ))}

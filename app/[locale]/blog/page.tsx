@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { content } from "@/lib/content";
+import { content, pricingEnabled } from "@/lib/content";
 import { blogPreviewImages } from "@/lib/blog-images";
+import { SiteHeader } from "@/components/site-header";
 import { isLocale, type Locale } from "@/lib/i18n";
 
 type BlogPageProps = {
@@ -55,11 +56,19 @@ export default async function BlogPage({ params }: BlogPageProps) {
   const data = content[locale as Locale];
 
   return (
-    <main className="container" style={{ paddingTop: "6rem", paddingBottom: "2rem" }}>
-      <Link href={`/${locale}`} className="btn btnGhost">
-        {locale === "uk" ? "Повернутися на головну" : "Back to landing"}
-      </Link>
-      <section className="section block" style={{ marginTop: "1rem" }}>
+    <div className="pageShell theme-calm">
+      <SiteHeader
+        locale={locale as Locale}
+        nav={data.nav}
+        ctaLabel={data.pricing.cta}
+        hasPricing={pricingEnabled && data.pricing.groups.length > 0}
+        sectionBase={`/${locale}`}
+      />
+      <main className="container" style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
+        <Link href={`/${locale}`} className="btn btnGhost">
+          {locale === "uk" ? "Повернутися на головну" : "Back to landing"}
+        </Link>
+        <section className="section block" style={{ marginTop: "1rem" }}>
         <h1 className="blogTitle">{data.blog.title}</h1>
         {data.blog.description ? <p>{data.blog.description}</p> : null}
         <div className="programGrid">
@@ -85,6 +94,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
           ))}
         </div>
       </section>
-    </main>
+      </main>
+    </div>
   );
 }
