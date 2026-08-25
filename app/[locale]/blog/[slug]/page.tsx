@@ -126,12 +126,41 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
           </div>
         ) : null}
         <div style={{ display: "grid", gap: "0.9rem", marginTop: "1rem" }}>
-          {post.content.map((paragraph) => (
-            <p key={paragraph} style={{ margin: 0 }}>
-              {paragraph}
-            </p>
-          ))}
+          {post.content.map((paragraph) =>
+            paragraph.startsWith("## ") ? (
+              <h2
+                key={paragraph}
+                style={{
+                  margin: "0.8rem 0 0",
+                  fontSize: "clamp(1.35rem, 2.6vw, 1.7rem)",
+                  lineHeight: 1.2,
+                  maxWidth: "34ch",
+                }}
+              >
+                {paragraph.slice(3)}
+              </h2>
+            ) : (
+              <p key={paragraph} style={{ margin: 0 }}>
+                {paragraph}
+              </p>
+            ),
+          )}
         </div>
+
+        {post.sources && post.sources.length > 0 ? (
+          <div className="blogSources">
+            <h2 className="blogSourcesTitle">{locale === "uk" ? "Джерела" : "Sources"}</h2>
+            <ol className="blogSourcesList">
+              {post.sources.map((source) => (
+                <li key={source.url}>
+                  <a href={source.url} target="_blank" rel="noopener noreferrer">
+                    {source.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ) : null}
       </article>
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />

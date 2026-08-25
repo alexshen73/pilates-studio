@@ -62,7 +62,14 @@ export type LandingContent = {
   blog: {
     title: string;
     description: string;
-    posts: Array<{ slug: string; title: string; excerpt: string; publishedDate: string; content: string[] }>;
+    posts: Array<{
+      slug: string;
+      title: string;
+      excerpt: string;
+      publishedDate: string;
+      content: string[];
+      sources?: Array<{ label: string; url: string }>;
+    }>;
     cta: string;
   };
   faq: {
@@ -324,6 +331,88 @@ export const content: Record<Locale, LandingContent> = {
             "Перші зміни зазвичай відчуваються як менше напруги між лопатками й у шиї після робочого дня - вже за перший тиждень регулярної практики. Візуально рівніша постава з’являється трохи пізніше, за 3-4 тижні.",
             "Додатковий лайфхак: короткі 2-3-хвилинні паузи на мобільність грудного відділу прямо за робочим столом (кілька розворотів корпусу, зведення лопаток на стільці) підтримують ефект між повноцінними заняттями і не дають м’язам знову «застигнути».",
             "Найкраще працює поєднання таких коротких вправ протягом дня з регулярними повноцінними заняттями 2-3 рази на тиждень - так тіло отримує і миттєве розвантаження, і довгостроковий м’язовий баланс.",
+          ],
+        },
+        {
+          slug: "skilky-trenuvan-z-pilatesu-na-tyzhden",
+          title: "Скільки тренувань з пілатесу на тиждень? Моя відповідь - три",
+          excerpt: "Чому оптимальна частота - три заняття на тиждень (вівторок, четвер, субота), що про це кажуть дослідження сили та рухливості, і що робити, якщо три не виходить.",
+          publishedDate: "2026-08-24T09:00:00+03:00",
+          content: [
+            "Це питання ставлять майже всі, хто приходить на перше заняття. Одні готові тренуватися щодня і розчаровуються, коли чують «не поспішайте». Інші можуть виділити годину раз на тиждень і бояться, що це марна трата часу.",
+            "За чотирнадцять років викладання я прийшла до цілком конкретної відповіді: вівторок, четвер, субота. Три заняття на тиждень. І це не просто зручний розклад - за ним стоїть логіка, яку добре підтримують дослідження.",
+            "## Почнімо з простої арифметики",
+            "Всесвітня організація охорони здоров’я рекомендує дорослим 150-300 хвилин помірної фізичної активності на тиждень плюс силові вправи на всі основні групи м’язів щонайменше два дні на тиждень.",
+            "Тепер порахуймо. Два заняття по 60 хвилин - це 120 хвилин, і ви не дотягуєте навіть до нижньої межі норми. Три заняття - це 180 хвилин, тобто ви вже всередині рекомендованого коридору, з невеликим запасом.",
+            "Уже сама ця арифметика багато пояснює. Два заняття на тиждень - це не оптимум, це мінімально прийнятний рівень. Оптимум починається трохи вище.",
+            "## Обсяг вирішує, а частота - це спосіб його набрати",
+            "У дослідженнях силових тренувань є висновок, який часто цитують неправильно. Великий метааналіз 25 робіт (Schoenfeld, Grgic, Krieger, 2019) показав: якщо загальний тижневий обсяг однаковий, частота тренувань сама по собі майже не впливає на результат.",
+            "Звідси часто роблять хибний висновок, що частота не важлива. Насправді висновок інший: важливий обсяг, а частота - це механізм, яким ви його набираєте. Ключове слово тут «якщо обсяг однаковий». У реальному житті він не однаковий. Ніхто не приходить на два заняття і не робить у них півтори норми вправ, тож три заняття на тиждень - це просто на 50% більше роботи, ніж два.",
+            "І там, де обсяг не вирівнювали штучно, різниця видно чітко. Метааналіз, присвячений приросту сили (Grgic та колеги, 2018), показав, що величина ефекту зростає разом із частотою: 0,74 для одного заняття на тиждень, 0,82 для двох, 0,93 для трьох і 1,08 для чотирьох і більше.",
+            "Три - це та точка, де крива вже помітно піднялася, але навантаження ще спокійно вписується в життя звичайної людини.",
+            "## Рухливість любить частоту особливо",
+            "Якщо для сили частота - приємний бонус, то для гнучкості й амплітуди руху вона принципова.",
+            "Огляд 23 досліджень (Thomas та колеги, 2018) прямо показав, що тижнева частота позитивно пов’язана з амплітудою руху, і саме сумарний час за тиждень визначає результат, а не тривалість окремого підходу. Рекомендація авторів звучить так: працювати над гнучкістю бажано не менше п’яти днів на тиждень.",
+            "П’ять - це вже багато для повноцінних занять. Але три тренування плюс короткі самостійні сесії у вільні дні дають рівно той розподіл, якого потребує сполучна тканина. Вона відповідає на частий повторюваний стимул, а не на один героїчний розтяг раз на тиждень.",
+            "## Чесно про дослідження, де три не перемогли двох",
+            "Тут варто бути точною, бо це дослідження часто цитують. Бразильські науковці (Miyamoto та колеги, 2016) набрали 296 людей із хронічним болем у попереку й розділили на групи: брошура, пілатес раз, двічі й тричі на тиждень протягом шести тижнів. Усі групи з пілатесом випередили брошуру, два заняття виявилися кращими за одне, а три не дали додаткової переваги порівняно з двома.",
+            "Це чесний результат, і я його не приховую. Але важливо розуміти, що саме там вимірювали, а вимірювали біль і функціональні обмеження в клінічній групі за шість тижнів. Це задача знеболення, і висновок звучить дуже обнадійливо: щоб перестала боліти спина, достатньо двох занять на тиждень. Чудова новина для того, хто приходить із болем.",
+            "Але «перестало боліти» і «сильне, рухливе, витривале тіло» - це різні цілі. Знеболення справді виходить на плато швидко. Сила, витривалість, контроль руху й амплітуда - ні, вони продовжують зростати з обсягом, і саме про це говорять метааналізи силових і розтяжки.",
+            "Тому моя логіка така: два заняття - щоб позбутися проблеми, три - щоб будувати тіло, у якому проблема не повертається.",
+            "## Чому саме вівторок, четвер, субота",
+            "Це не випадковий розклад. Між заняттями ніколи не більше двох днів, тому тіло не встигає «забути» напрацьоване. Нервова система утримує руховий навик, м’язи залишаються в тонусі, і кожне наступне заняття починається не з нуля, а з того місця, де ви зупинилися.",
+            "Одна доба на відновлення після кожного заняття теж має значення. Пілатес не створює навантаження, після якого потрібно відлежуватися три дні, але день паузи дозволяє тканинам адаптуватися.",
+            "Вихідні при цьому розвантажені частково, а не повністю. Субота вранці - найстабільніший слот тижня, її не з’їдають робочі наради й дедлайни.",
+            "І головне - це фіксовані дні. Не «три рази коли вийде», а вівторок, четвер, субота. Рішення приймається один раз, а далі працює звичка, а не сила волі.",
+            "## Про пастку амбітних планів",
+            "Є дані, які варто тримати в голові саме тому, що вони незручні. У бостонському дослідженні йоги порівнювали заняття раз і двічі на тиждень. Обидві групи покращили і біль, і функціональність, різниці між ними не було. Але цікаве інше: відвідуваність у групі «раз на тиждень» становила 73%, а в групі «двічі на тиждень» - лише 62%. Люди, від яких вимагали більше, ходили гірше.",
+            "Саме тому я не пропоную своїм клієнтам п’ять чи шість занять на тиждень, хоча теоретично це дало б ще більший ефект. План на п’ять занять розсипається через три тижні, а план на три з фіксованими днями тримається роками. Три - це та межа, де більше ще не означає гірше.",
+            "## А якщо три не виходить",
+            "Виходить не в усіх, і це нормально.",
+            "Два заняття на тиждень - повноцінний робочий формат. Дослідження про біль у попереку це прямо підтверджує. Прогрес буде повільнішим у силі й рухливості, але він буде стабільний.",
+            "Одне заняття на тиждень теж має сенс, особливо в поєднанні з іншою активністю: ходьбою, плаванням, залом. Одне заняття незрівнянно краще за жодне.",
+            "Компроміс, який працює найкраще: скільки б занять не було, додайте 10-15 хвилин самостійної практики у вільні дні. Дихання, мобільність грудного відділу, активація центру. Метааналіз розтяжки прямо на це вказує - накопичений за тиждень час важить більше, ніж тривалість окремого підходу.",
+            "## І трохи про паузи",
+            "Ще одна річ, яка заспокоює: результати не зникають миттєво. Метааналіз досліджень про припинення тренувань показав, що після 2-6 тижнів перерви амплітуда руху дещо знижується порівняно з піком, але залишається помітно вищою за початковий рівень.",
+            "Відпустка, хвороба чи завал на роботі не обнуляють вашу роботу, вони лише ставлять її на паузу.",
+            "## Підсумок",
+            "Три заняття на тиждень - оптимум: 180 хвилин, що вкладається в норму ВООЗ, достатній обсяг для росту сили й рухливості, інтервал не більше двох днів. Два - надійний робочий мінімум, якого достатньо, щоб позбутися болю й тримати форму. Одне працює повільніше, але працює.",
+            "Фіксовані дні важливіші за кількість: вівторок, четвер, субота б’ють будь-який амбітний план «по можливості». А регулярність протягом місяців важить більше за інтенсивність окремого тижня.",
+            "Якщо сумніваєтеся - почніть із двох і додайте третє через місяць, коли звичка вже сформувалася. Так вона майже ніколи не ламається.",
+          ],
+          sources: [
+            {
+              label: "Miyamoto та ін. Частота занять пілатесом при хронічному болю в попереку (РКД), Physical Therapy, 2016",
+              url: "https://pubmed.ncbi.nlm.nih.gov/26294680/",
+            },
+            {
+              label: "da Silva та ін. Різна тижнева частота пілатесу і динаміка болю в попереку, Brazilian Journal of Physical Therapy, 2020",
+              url: "https://pubmed.ncbi.nlm.nih.gov/31307904/",
+            },
+            {
+              label: "Grgic та ін. Вплив частоти силових тренувань на приріст сили (метааналіз), Sports Medicine, 2018",
+              url: "https://pubmed.ncbi.nlm.nih.gov/29470825/",
+            },
+            {
+              label: "Schoenfeld, Grgic, Krieger. Скільки разів на тиждень тренувати м’яз для гіпертрофії, Journal of Sports Sciences, 2019",
+              url: "https://pubmed.ncbi.nlm.nih.gov/30558493/",
+            },
+            {
+              label: "Thomas та ін. Тип і тривалість розтяжки та вплив на амплітуду руху, International Journal of Sports Medicine, 2018",
+              url: "https://pubmed.ncbi.nlm.nih.gov/29506306/",
+            },
+            {
+              label: "Saper та ін. Йога раз проти двічі на тиждень при хронічному болю в попереку, Evidence-Based Complementary and Alternative Medicine, 2013",
+              url: "https://pubmed.ncbi.nlm.nih.gov/23878604/",
+            },
+            {
+              label: "ВООЗ. Рекомендації щодо фізичної активності та малорухливої поведінки, 2020",
+              url: "https://www.ncbi.nlm.nih.gov/books/NBK566046/",
+            },
+            {
+              label: "Вплив припинення розтяжок на амплітуду руху (метааналіз)",
+              url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12638565/",
+            },
           ],
         },
       ],
@@ -612,6 +701,88 @@ export const content: Record<Locale, LandingContent> = {
             "The first changes are usually felt as less tension between the shoulder blades and neck by the end of the workday - often within the first week of consistent practice. A visibly straighter posture tends to show up a bit later, after 3-4 weeks.",
             "A useful extra habit: short 2-3 minute thoracic mobility breaks right at your desk (a few torso rotations, shoulder blade squeezes while seated) maintain the effect between full sessions and keep the muscles from tightening back up.",
             "The best results come from combining these short daily breaks with 2-3 full sessions per week - giving the body both immediate relief and long-term muscular balance.",
+          ],
+        },
+        {
+          slug: "how-many-pilates-sessions-per-week",
+          title: "How Many Pilates Sessions a Week? My Answer Is Three",
+          excerpt: "Why three sessions a week (Tuesday, Thursday, Saturday) is the sweet spot, what the research on strength and mobility actually shows, and what to do if three isn't realistic.",
+          publishedDate: "2026-08-24T09:00:00+03:00",
+          content: [
+            "Almost everyone who comes to a first session asks this. Some are ready to train every day and feel let down when they hear «don't rush». Others can only spare an hour once a week and worry it's a waste of time.",
+            "After fourteen years of teaching I've arrived at a very concrete answer: Tuesday, Thursday, Saturday. Three sessions a week. And it isn't just a convenient schedule - there's a logic behind it that the research supports well.",
+            "## Let's start with simple arithmetic",
+            "The World Health Organization recommends adults get 150-300 minutes of moderate physical activity a week, plus strengthening exercises for all major muscle groups on at least two days a week.",
+            "Now let's count. Two 60-minute sessions is 120 minutes, which doesn't even reach the lower edge of the norm. Three sessions is 180 minutes, which puts you inside the recommended range with a little to spare.",
+            "The arithmetic alone explains a lot. Two sessions a week isn't the optimum, it's the minimally acceptable level. The optimum starts a little higher.",
+            "## Volume decides, and frequency is how you accumulate it",
+            "There's a finding in strength-training research that often gets quoted incorrectly. A large meta-analysis of 25 studies (Schoenfeld, Grgic, Krieger, 2019) showed that if total weekly volume is the same, training frequency by itself has almost no effect on the result.",
+            "People often draw the wrong conclusion that frequency doesn't matter. The real conclusion is different: volume matters, and frequency is the mechanism you use to accumulate it. The key phrase is «if volume is the same». In real life it isn't. Nobody shows up for two sessions and does one and a half times the usual amount of work, so three sessions a week is simply 50% more work than two.",
+            "And where the volume wasn't artificially equalized, the difference is clear. A meta-analysis on strength gains (Grgic and colleagues, 2018) showed that the effect size grows with frequency: 0.74 for one session a week, 0.82 for two, 0.93 for three, and 1.08 for four or more.",
+            "Three is the point where the curve has already risen noticeably, but the load still fits comfortably into an ordinary person's life.",
+            "## Mobility loves frequency especially",
+            "If frequency is a nice bonus for strength, for flexibility and range of motion it's essential.",
+            "A review of 23 studies (Thomas and colleagues, 2018) showed directly that weekly frequency is positively linked to range of motion, and that it's the total time across the week that determines the result, not the length of a single set. The authors' recommendation is to work on flexibility on at least five days a week.",
+            "Five is already a lot for full sessions. But three workouts plus short self-guided sessions on the off days give exactly the distribution connective tissue needs. It responds to a frequent, repeated stimulus, not to one heroic stretch once a week.",
+            "## Being honest about the study where three didn't beat two",
+            "Here I want to be precise, because this study gets quoted a lot. Brazilian researchers (Miyamoto and colleagues, 2016) recruited 296 people with chronic low back pain and split them into groups: a booklet, and pilates once, twice, and three times a week over six weeks. All the pilates groups outperformed the booklet, two sessions were better than one, and three gave no additional advantage over two.",
+            "It's an honest result, and I'm not hiding it. But it's important to understand what was actually measured, and what was measured was pain and functional limitation in a clinical group over six weeks. That's a pain-relief task, and the conclusion is very reassuring: to stop your back hurting, two sessions a week is enough. Great news for someone who comes in with pain.",
+            "But «the pain stopped» and «a strong, mobile, resilient body» are different goals. Pain relief really does plateau quickly. Strength, endurance, movement control, and range of motion don't - they keep growing with volume, and that's exactly what the strength and stretching meta-analyses are about.",
+            "So my logic is this: two sessions to get rid of the problem, three to build a body in which the problem doesn't come back.",
+            "## Why Tuesday, Thursday, Saturday specifically",
+            "It's not a random schedule. There are never more than two days between sessions, so the body doesn't have time to «forget» what it learned. The nervous system holds the movement skill, the muscles stay in tone, and each new session starts not from zero but from where you left off.",
+            "One full day to recover after each session matters too. Pilates doesn't create the kind of load that leaves you needing three days off, but a rest day lets the tissues adapt.",
+            "The weekend stays partly, not fully, unloaded. Saturday morning is the most stable slot of the week, not eaten up by work meetings and deadlines.",
+            "And most importantly, these are fixed days. Not «three times whenever it works out», but Tuesday, Thursday, Saturday. The decision is made once, and after that it runs on habit rather than willpower.",
+            "## About the trap of ambitious plans",
+            "There's data worth keeping in mind precisely because it's inconvenient. A Boston yoga study compared classes once and twice a week. Both groups improved both pain and function, with no difference between them. But here's the interesting part: attendance in the «once a week» group was 73%, and in the «twice a week» group only 62%. The people asked to do more showed up less.",
+            "That's exactly why I don't suggest five or six sessions a week to my clients, even though in theory it would give an even bigger effect. A five-session plan falls apart within three weeks, while a three-session plan with fixed days holds up for years. Three is the line where more doesn't yet mean worse.",
+            "## And if three isn't possible",
+            "It isn't possible for everyone, and that's fine.",
+            "Two sessions a week is a fully workable format. The low back pain research confirms this directly. Progress in strength and mobility will be slower, but it will be steady.",
+            "One session a week also makes sense, especially combined with other activity: walking, swimming, the gym. One session is incomparably better than none.",
+            "The compromise that works best: however many sessions you do, add 10-15 minutes of self-guided practice on the off days. Breathing, thoracic mobility, core activation. The stretching meta-analysis points to exactly this - the time accumulated across the week matters more than the length of a single set.",
+            "## And a little about breaks",
+            "One more reassuring thing: results don't disappear instantly. A meta-analysis on detraining showed that after a 2-6 week break, range of motion drops slightly compared with the peak, but stays noticeably higher than the starting level.",
+            "A holiday, an illness, or a crunch at work don't reset your progress, they just put it on pause.",
+            "## In summary",
+            "Three sessions a week is the optimum: 180 minutes that fits the WHO norm, enough volume to grow strength and mobility, and no more than two days between sessions. Two is a reliable working minimum, enough to get rid of pain and stay in shape. One works more slowly, but it works.",
+            "Fixed days matter more than the count: Tuesday, Thursday, Saturday beat any ambitious «when possible» plan. And consistency over months matters more than the intensity of any single week.",
+            "If you're unsure, start with two and add the third after a month, once the habit has formed. That way it almost never breaks.",
+          ],
+          sources: [
+            {
+              label: "Miyamoto et al. Weekly frequency of Pilates for chronic low back pain (RCT), Physical Therapy, 2016",
+              url: "https://pubmed.ncbi.nlm.nih.gov/26294680/",
+            },
+            {
+              label: "da Silva et al. Different weekly frequencies of Pilates and low back pain improvement, Brazilian Journal of Physical Therapy, 2020",
+              url: "https://pubmed.ncbi.nlm.nih.gov/31307904/",
+            },
+            {
+              label: "Grgic et al. Resistance training frequency and gains in muscular strength (meta-analysis), Sports Medicine, 2018",
+              url: "https://pubmed.ncbi.nlm.nih.gov/29470825/",
+            },
+            {
+              label: "Schoenfeld, Grgic, Krieger. Training frequency and muscle hypertrophy, Journal of Sports Sciences, 2019",
+              url: "https://pubmed.ncbi.nlm.nih.gov/30558493/",
+            },
+            {
+              label: "Thomas et al. Stretching typology and duration: effects on range of motion, International Journal of Sports Medicine, 2018",
+              url: "https://pubmed.ncbi.nlm.nih.gov/29506306/",
+            },
+            {
+              label: "Saper et al. Once- versus twice-weekly yoga for chronic low back pain, Evidence-Based Complementary and Alternative Medicine, 2013",
+              url: "https://pubmed.ncbi.nlm.nih.gov/23878604/",
+            },
+            {
+              label: "WHO. Guidelines on Physical Activity and Sedentary Behaviour, 2020",
+              url: "https://www.ncbi.nlm.nih.gov/books/NBK566046/",
+            },
+            {
+              label: "Detraining effects following chronic stretching on range of motion (meta-analysis)",
+              url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12638565/",
+            },
           ],
         },
       ],

@@ -872,6 +872,39 @@ h1 {
   background: var(--surface-strong);
 }
 
+.blogSources {
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(35, 50, 71, 0.12);
+}
+
+.blogSources .blogSourcesTitle {
+  margin: 0 0 0.9rem;
+  max-width: 34ch;
+  font-size: clamp(1.35rem, 2.6vw, 1.7rem);
+  line-height: 1.2;
+}
+
+.blogSourcesList {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.blogSourcesList a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+.blogSourcesList a:hover {
+  color: var(--text);
+}
+
 .infoCard p,
 .programCard p,
 .faqCard p {

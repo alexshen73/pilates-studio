@@ -13,4 +13,6 @@ export const blogPreviewImages: Record<string, string> = {
   "how-long-until-you-see-results-from-pilates": "/photos/pilates-results-timeline.webp",
   "pilates-i-postava-yak-prybraty-sutulist-bez-bolyu": "/photos/pilates-posture.webp",
   "pilates-and-posture-how-to-fix-rounded-shoulders-without-pain": "/photos/pilates-posture.webp",
+  "skilky-trenuvan-z-pilatesu-na-tyzhden": "/photos/pilates-frequency.webp",
+  "how-many-pilates-sessions-per-week": "/photos/pilates-frequency.webp",
 };
