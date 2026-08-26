@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import { content, pricingEnabled } from "@/lib/content";
 import { blogPreviewImages } from "@/lib/blog-images";
+import { ScrollTopButton } from "@/components/scroll-top-button";
 import { SiteHeader } from "@/components/site-header";
 import { isLocale, type Locale } from "@/lib/i18n";
 
@@ -95,6 +96,8 @@ export default async function BlogPage({ params }: BlogPageProps) {
         </div>
       </section>
       </main>
+
+      <ScrollTopButton />
     </div>
   );
 }

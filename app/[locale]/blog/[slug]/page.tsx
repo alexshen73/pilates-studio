@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import { blogPreviewImages } from "@/lib/blog-images";
 import { content, pricingEnabled } from "@/lib/content";
+import { ScrollTopButton } from "@/components/scroll-top-button";
 import { SiteHeader } from "@/components/site-header";
 import { isLocale, locales, type Locale } from "@/lib/i18n";
 
@@ -165,6 +166,8 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </main>
+
+      <ScrollTopButton />
     </div>
   );
 }
