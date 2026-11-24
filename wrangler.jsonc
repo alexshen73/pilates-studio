@@ -1,15 +1,14 @@
-// Конфігурація Cloudflare Workers (деплой через @opennextjs/cloudflare).
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "pilates-studio",
-  "main": ".open-next/worker.js",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-07-01",
-  "compatibility_flags": ["nodejs_compat"],
   "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS"
+    "directory": "out",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
   },
-  "observability": {
-    "enabled": true
-  }
+  // Не стирати змінні (TELEGRAM_*), задані в дашборді Cloudflare, під час деплою.
+  "keep_vars": true,
+  "observability": { "enabled": true }
 }
